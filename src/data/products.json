@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "name": "Implant",
+    "price": 200000,
+    "image": "/images/product_01.png",
+    "category": "Implant",
+    "description": "Durable orthopaedic implant for bone support and recovery."
+  },
+  {
+    "id": "2",
+    "name": "Orthotic",
+    "price": 150000,
+    "image": "/images/product_02.png",
+    "category": "Orthotic",
+    "description": "High-quality orthotic support designed for comfort and mobility."
+  },
+  {
+    "id": "3",
+    "name": "Crutches",
+    "price": 120000,
+    "image": "/images/product_03.png",
+    "category": "Crutches",
+    "description": "Lightweight and adjustable crutches for safe mobility support."
+  },
+  {
+    "id": "4",
+    "name": "Brace",
+    "price": 180000,
+    "image": "/images/back brace.png",
+    "category": "Brace",
+    "description": "Durable back brace for posture correction and lumbar support."
+  }
+]
