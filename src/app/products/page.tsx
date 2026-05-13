@@ -1,23 +1,31 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import products from "@/data/products.json";
 import ProductCard from "@/components/ProductCard";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES = [
-  "All",
-  "Implants",
-  "Orthotics",
-  "Prosthetics",
-  "Mobility Aids",
-  "Surgical Instruments",
-  "Consumables",
-  "Orthoses",
+const CATEGORIES: { label: string; value: string }[] = [
+  { label: "All", value: "All" },
+  { label: "Implants", value: "Implant" },
+  { label: "Orthotics", value: "Orthotic" },
+  { label: "Braces", value: "Brace" },
+  { label: "Crutches", value: "Crutches" },
+  { label: "Prosthetics", value: "Prosthetics" },
+  { label: "Surgical Instruments", value: "Surgical Instruments" },
+  { label: "Consumables", value: "Consumables" },
 ];
 
 export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get("category");
+    if (cat && CATEGORIES.some((c) => c.value === cat)) {
+      setActiveCategory(cat);
+    }
+  }, []);
 
   const filtered = useMemo(() => {
     if (activeCategory === "All") return products;
@@ -45,18 +53,18 @@ export default function ShopPage() {
       {/* Sticky filter bar */}
       <div className="sticky top-16 z-20 bg-white border-b border-brand-light shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center gap-2 flex-wrap">
-          {CATEGORIES.map((cat) => (
+          {CATEGORIES.map(({ label, value }) => (
             <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
+              key={value}
+              onClick={() => setActiveCategory(value)}
               className={cn(
                 "px-4 py-1.5 rounded-full text-sm font-sans font-medium transition-all",
-                activeCategory === cat
+                activeCategory === value
                   ? "bg-brand-dark text-white shadow-sm"
                   : "bg-brand-surface text-brand-muted hover:text-brand-dark hover:bg-brand-light"
               )}
             >
-              {cat}
+              {label}
             </button>
           ))}
         </div>

@@ -35,7 +35,7 @@ export default function UtilityBar() {
           <a href="tel:+256392392921" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
             <Phone className="w-3 h-3" /> Call: +256 392 392921
           </a>
-          <a href="mailto:info@biotechorthomart.com" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
+          <a href="mailto:info@biotechorthomart.com" className="hidden sm:flex items-center gap-1.5 hover:text-brand-gold transition-colors">
             <Mail className="w-3 h-3" /> info@biotechorthomart.com
           </a>
           <span className="text-white/50 hidden md:block">Mon–Fri: 8:00am – 5:00pm</span>

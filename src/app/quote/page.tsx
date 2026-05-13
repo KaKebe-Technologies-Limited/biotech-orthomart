@@ -55,7 +55,7 @@ export default function QuotePage() {
           Browse our products and add items to request a quote.
         </p>
         <Link
-          href="/shop"
+          href="/products"
           className="inline-block bg-brand-blue text-white font-sans font-semibold px-8 py-3 rounded-full hover:bg-brand-blue/90 transition-colors"
         >
           Browse Products
