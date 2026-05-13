@@ -199,7 +199,7 @@ export default function Home() {
               </p>
               <p className="font-sans text-brand-muted leading-relaxed mb-8">
                 Every device we supply carries CE or FDA certification, sourced directly from world-class
-                manufacturers including Circleg and Tekniken. Our mission is to make premium orthopaedic
+                manufacturers including Circleg and Teknimed. Our mission is to make premium orthopaedic
                 care accessible to Uganda's healthcare ecosystem.
               </p>
               <Link
@@ -310,7 +310,7 @@ export default function Home() {
                   <span className="font-sans font-semibold text-white text-sm tracking-wide">CIRCLEG</span>
                 </div>
                 <div className="border border-white/20 rounded-lg px-5 py-3">
-                  <span className="font-sans font-semibold text-white text-sm tracking-wide">TEKNIKEN</span>
+                  <span className="font-sans font-semibold text-white text-sm tracking-wide">TEKNIMED</span>
                 </div>
               </div>
 
