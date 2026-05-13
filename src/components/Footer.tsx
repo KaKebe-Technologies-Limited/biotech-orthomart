@@ -45,7 +45,7 @@ export default function Footer() {
             <h4 className="font-sans font-semibold text-sm mb-6 tracking-wide uppercase text-white/80">Quick Links</h4>
             <ul className="space-y-4 text-brand-muted text-sm font-sans">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/shop" className="hover:text-white transition-colors">Products</Link></li>
+              <li><Link href="/products" className="hover:text-white transition-colors">Products</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Our Services</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
@@ -56,10 +56,10 @@ export default function Footer() {
           <div>
             <h4 className="font-sans font-semibold text-sm mb-6 tracking-wide uppercase text-white/80">Product Categories</h4>
             <ul className="space-y-4 text-brand-muted text-sm font-sans">
-              <li><Link href="/shop?category=Implant" className="hover:text-white transition-colors">Orthopaedic Implants</Link></li>
-              <li><Link href="/shop?category=Orthotic" className="hover:text-white transition-colors">Orthotic Supports</Link></li>
-              <li><Link href="/shop?category=Trauma" className="hover:text-white transition-colors">Trauma Devices</Link></li>
-              <li><Link href="/shop?category=Brace" className="hover:text-white transition-colors">Back Braces</Link></li>
+              <li><Link href="/products?category=Implant" className="hover:text-white transition-colors">Orthopaedic Implants</Link></li>
+              <li><Link href="/products?category=Orthotic" className="hover:text-white transition-colors">Orthotic Supports</Link></li>
+              <li><Link href="/products?category=Trauma" className="hover:text-white transition-colors">Trauma Devices</Link></li>
+              <li><Link href="/products?category=Brace" className="hover:text-white transition-colors">Back Braces</Link></li>
             </ul>
           </div>
 
