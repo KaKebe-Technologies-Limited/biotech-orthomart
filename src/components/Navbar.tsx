@@ -64,6 +64,18 @@ export default function Navbar() {
               About
             </Link>
             <Link
+              href="/who-we-serve"
+              className="font-sans font-medium text-sm text-brand-dark hover:text-brand-blue transition-colors"
+            >
+              Who We Serve
+            </Link>
+            <Link
+              href="/news"
+              className="font-sans font-medium text-sm text-brand-dark hover:text-brand-blue transition-colors"
+            >
+              News
+            </Link>
+            <Link
               href="/contact"
               className="font-sans font-medium text-sm text-brand-dark hover:text-brand-blue transition-colors"
             >
