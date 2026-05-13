@@ -9,6 +9,7 @@ import {
   Package,
   Stethoscope,
 } from "lucide-react";
+import { toast } from "sonner";
 import { useQuoteBasket } from "@/store/useQuoteBasket";
 
 interface Product {
@@ -47,7 +48,14 @@ export default function ProductCard({ product }: { product: Product }) {
       category: product.category,
       quantity: 1,
     });
-    openDrawer();
+    toast(`${product.name} added to quote`, {
+      description: product.category,
+      action: {
+        label: "View quote",
+        onClick: openDrawer,
+      },
+      duration: 3000,
+    });
   }
 
   return (
