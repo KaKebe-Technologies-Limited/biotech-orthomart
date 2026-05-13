@@ -1,32 +1,35 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-interface CartItem {
+export interface QuoteItem {
   id: string;
   name: string;
-  price: number;
   image: string;
+  category: string;
   quantity: number;
 }
 
-interface CartStore {
-  items: CartItem[];
-  addItem: (item: CartItem) => void;
+interface QuoteBasketStore {
+  items: QuoteItem[];
+  isOpen: boolean;
+  addItem: (item: QuoteItem) => void;
   removeItem: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
-  clearCart: () => void;
+  clearBasket: () => void;
   totalItems: () => number;
-  totalPrice: () => number;
+  openDrawer: () => void;
+  closeDrawer: () => void;
 }
 
-export const useCart = create<CartStore>()(
+export const useQuoteBasket = create<QuoteBasketStore>()(
   persist(
     (set, get) => ({
       items: [],
+      isOpen: false,
       addItem: (newItem) => {
         const items = get().items;
-        const existingItem = items.find((item) => item.id === newItem.id);
-        if (existingItem) {
+        const existing = items.find((item) => item.id === newItem.id);
+        if (existing) {
           set({
             items: items.map((item) =>
               item.id === newItem.id
@@ -46,12 +49,14 @@ export const useCart = create<CartStore>()(
             item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
           ),
         }),
-      clearCart: () => set({ items: [] }),
+      clearBasket: () => set({ items: [] }),
       totalItems: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
-      totalPrice: () => get().items.reduce((sum, item) => sum + item.price * item.quantity, 0),
+      openDrawer: () => set({ isOpen: true }),
+      closeDrawer: () => set({ isOpen: false }),
     }),
     {
-      name: 'biotech-cart',
+      name: 'biotech-quote-basket',
+      partialize: (state) => ({ items: state.items }),
     }
   )
 );

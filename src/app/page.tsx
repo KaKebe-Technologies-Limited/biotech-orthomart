@@ -10,6 +10,7 @@ export default function Home() {
         <Image
           src="/images/hero_1.jpg"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
           alt=""

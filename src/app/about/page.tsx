@@ -27,7 +27,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/3]">
-              <Image src="/images/about_1.jpg" alt="Medical Professional" fill className="object-cover" />
+              <Image src="/images/about_1.jpg" alt="Medical Professional" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
             </div>
           </div>
         </div>
