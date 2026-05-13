@@ -1,12 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Heart } from "lucide-react";
 
 const FacebookIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-);
-
-const TwitterIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
 );
 
 const InstagramIcon = () => (
@@ -24,19 +21,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <img src="/images/logo.jpg" alt="Logo" className="h-10 w-auto brightness-0 invert" />
-              <span className="text-xl font-bold">Biotech Orthomart</span>
+            <Link href="/">
+              <Image src="/images/logo.png" alt="Biotech Orthomart" width={140} height={40} className="h-10 w-auto brightness-0 invert" />
             </Link>
-            <p className="text-brand-muted text-sm leading-relaxed">
+            <p className="text-brand-muted text-sm leading-relaxed font-sans">
               Leading provider of CE/FDA approved orthopaedic solutions in East Africa. Committed to excellence in patient care and medical reliability.
             </p>
             <div className="flex gap-4">
               <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="Facebook">
                 <FacebookIcon />
-              </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="Twitter">
-                <TwitterIcon />
               </a>
               <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-white/10 transition-colors" aria-label="Instagram">
                 <InstagramIcon />
@@ -49,10 +42,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-brand-muted text-sm">
+            <h4 className="font-sans font-semibold text-sm mb-6 tracking-wide uppercase text-white/80">Quick Links</h4>
+            <ul className="space-y-4 text-brand-muted text-sm font-sans">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/shop" className="hover:text-white transition-colors">Store</Link></li>
+              <li><Link href="/shop" className="hover:text-white transition-colors">Products</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Our Services</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
@@ -61,8 +54,8 @@ export default function Footer() {
 
           {/* Categories */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Product Categories</h4>
-            <ul className="space-y-4 text-brand-muted text-sm">
+            <h4 className="font-sans font-semibold text-sm mb-6 tracking-wide uppercase text-white/80">Product Categories</h4>
+            <ul className="space-y-4 text-brand-muted text-sm font-sans">
               <li><Link href="/shop?category=Implant" className="hover:text-white transition-colors">Orthopaedic Implants</Link></li>
               <li><Link href="/shop?category=Orthotic" className="hover:text-white transition-colors">Orthotic Supports</Link></li>
               <li><Link href="/shop?category=Trauma" className="hover:text-white transition-colors">Trauma Devices</Link></li>
@@ -72,28 +65,28 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Contact Info</h4>
-            <ul className="space-y-4 text-brand-muted text-sm">
+            <h4 className="font-sans font-semibold text-sm mb-6 tracking-wide uppercase text-white/80">Contact Info</h4>
+            <ul className="space-y-4 text-brand-muted text-sm font-sans">
               <li className="flex gap-3">
-                <span className="font-bold text-white">Address:</span>
+                <span className="font-semibold text-white">Address:</span>
                 Plot 47 Nakasero Hill Road, Kampala
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-white">Phone:</span>
+                <span className="font-semibold text-white">Phone:</span>
                 +256 392 392921
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-white">Email:</span>
+                <span className="font-semibold text-white">Email:</span>
                 info@biotechorthomart.com
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-muted">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-muted font-sans">
           <p>© {new Date().getFullYear()} Biotech Orthomart Ltd. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Developed with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> by <a href="https://kakebe.tech" className="text-white hover:underline">Kakebe Technologies</a>
+            Developed with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> by <a href="https://kakebe.tech" className="text-white hover:underline ml-1">Kakebe Technologies</a>
           </p>
         </div>
       </div>

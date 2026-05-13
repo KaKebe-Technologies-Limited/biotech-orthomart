@@ -2,17 +2,18 @@
 
 import { useCart } from "@/store/useCart";
 import { useEffect, useState } from "react";
-import { Lock, MessageSquare, CreditCard, ChevronRight } from "lucide-react";
+import { MessageSquare, ChevronRight, FileText } from "lucide-react";
 
 export default function CheckoutPage() {
   const [mounted, setMounted] = useState(false);
-  const { items, totalPrice } = useCart();
+  const { items } = useCart();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    address: "",
-    paymentMethod: "integrated", // integrated (Pesapal/DPO) or whatsapp
+    organisation: "",
+    message: "",
+    method: "form",
   });
 
   useEffect(() => {
@@ -21,35 +22,40 @@ export default function CheckoutPage() {
 
   if (!mounted) return null;
 
-  const handleCheckout = (e: React.FormEvent) => {
+  const whatsappUrl = () => {
+    const productList = items.map(i => `${i.name} × ${i.quantity}`).join("%0A");
+    const msg = `Hello Biotech Orthomart, I'd like to request a quote for the following:%0A${productList}%0A%0AName: ${formData.name}%0AOrganisation: ${formData.organisation}%0APhone: ${formData.phone}`;
+    return `https://wa.me/256392392921?text=${msg}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.paymentMethod === "whatsapp") {
-      const message = `Order from ${formData.name}%0AItems: ${items.map(i => `${i.name} x${i.quantity}`).join(", ")}%0ATotal: UGX ${totalPrice().toLocaleString()}%0AAddress: ${formData.address}`;
-      window.open(`https://wa.me/256392392921?text=${message}`, "_blank");
+    if (formData.method === "whatsapp") {
+      window.open(whatsappUrl(), "_blank");
     } else {
-      // Logic for Pesapal/DPO redirection
-      alert("Redirecting to secure payment gateway (Pesapal/DPO)...");
+      alert("Quote request submitted. Our team will contact you shortly.");
     }
   };
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-brand-dark mb-12">Checkout</h1>
+      <h1 className="font-serif text-3xl text-brand-dark mb-2">Submit Quote Request</h1>
+      <p className="font-sans text-brand-muted mb-12">Fill in your details and we'll get back to you with pricing.</p>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Form */}
-        <form onSubmit={handleCheckout} className="lg:col-span-2 space-y-8">
+        <form onSubmit={handleSubmit} className="lg:col-span-2 space-y-8">
           <section>
-            <h2 className="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm">1</span>
-              Contact Information
+            <h2 className="font-sans text-lg font-semibold text-brand-dark mb-6 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm font-sans">1</span>
+              Your Details
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Full Name"
                 required
-                className="p-4 border rounded-xl bg-white focus:ring-2 focus:ring-brand-blue outline-none"
+                className="p-4 border border-brand-light rounded-xl bg-brand-surface focus:ring-2 focus:ring-brand-blue outline-none font-sans"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
@@ -57,73 +63,79 @@ export default function CheckoutPage() {
                 type="email"
                 placeholder="Email Address"
                 required
-                className="p-4 border rounded-xl bg-white focus:ring-2 focus:ring-brand-blue outline-none"
+                className="p-4 border border-brand-light rounded-xl bg-brand-surface focus:ring-2 focus:ring-brand-blue outline-none font-sans"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
               <input
                 type="tel"
-                placeholder="Phone Number (MTN/Airtel)"
+                placeholder="Phone Number"
                 required
-                className="p-4 border rounded-xl bg-white focus:ring-2 focus:ring-brand-blue outline-none"
+                className="p-4 border border-brand-light rounded-xl bg-brand-surface focus:ring-2 focus:ring-brand-blue outline-none font-sans"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              />
+              <input
+                type="text"
+                placeholder="Organisation / Hospital (optional)"
+                className="p-4 border border-brand-light rounded-xl bg-brand-surface focus:ring-2 focus:ring-brand-blue outline-none font-sans"
+                value={formData.organisation}
+                onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
               />
             </div>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm">2</span>
-              Delivery Address
+            <h2 className="font-sans text-lg font-semibold text-brand-dark mb-6 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm font-sans">2</span>
+              Additional Notes
             </h2>
             <textarea
-              placeholder="Detailed Address / Hospital Name / Office"
-              required
+              placeholder="Any specific requirements or questions?"
               rows={3}
-              className="w-full p-4 border rounded-xl bg-white focus:ring-2 focus:ring-brand-blue outline-none"
-              value={formData.address}
-              onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+              className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface focus:ring-2 focus:ring-brand-blue outline-none font-sans"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             />
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm">3</span>
-              Payment Method
+            <h2 className="font-sans text-lg font-semibold text-brand-dark mb-6 flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-blue text-white text-sm font-sans">3</span>
+              How would you like to proceed?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <label className={`flex items-center gap-4 p-6 border rounded-2xl cursor-pointer transition-all ${formData.paymentMethod === "integrated" ? "border-brand-blue bg-brand-blue/5" : "hover:border-gray-300"}`}>
+              <label className={`flex items-center gap-4 p-6 border rounded-2xl cursor-pointer transition-all ${formData.method === "form" ? "border-brand-blue bg-brand-blue/5" : "border-brand-light hover:border-brand-blue/40"}`}>
                 <input
                   type="radio"
-                  name="payment"
+                  name="method"
                   className="hidden"
-                  checked={formData.paymentMethod === "integrated"}
-                  onChange={() => setFormData({ ...formData, paymentMethod: "integrated" })}
+                  checked={formData.method === "form"}
+                  onChange={() => setFormData({ ...formData, method: "form" })}
                 />
                 <div className="p-3 bg-white rounded-xl shadow-sm">
-                  <CreditCard className="h-6 w-6 text-brand-blue" />
+                  <FileText className="h-6 w-6 text-brand-blue" />
                 </div>
                 <div>
-                  <p className="font-bold">Mobile Money / Card</p>
-                  <p className="text-xs text-brand-muted">Securely pay via Pesapal</p>
+                  <p className="font-sans font-semibold text-brand-dark">Email Quote Request</p>
+                  <p className="font-sans text-xs text-brand-muted">We'll reply within 24 hours</p>
                 </div>
               </label>
 
-              <label className={`flex items-center gap-4 p-6 border rounded-2xl cursor-pointer transition-all ${formData.paymentMethod === "whatsapp" ? "border-brand-green bg-brand-green/5" : "hover:border-gray-300"}`}>
+              <label className={`flex items-center gap-4 p-6 border rounded-2xl cursor-pointer transition-all ${formData.method === "whatsapp" ? "border-brand-blue bg-brand-blue/5" : "border-brand-light hover:border-brand-blue/40"}`}>
                 <input
                   type="radio"
-                  name="payment"
+                  name="method"
                   className="hidden"
-                  checked={formData.paymentMethod === "whatsapp"}
-                  onChange={() => setFormData({ ...formData, paymentMethod: "whatsapp" })}
+                  checked={formData.method === "whatsapp"}
+                  onChange={() => setFormData({ ...formData, method: "whatsapp" })}
                 />
                 <div className="p-3 bg-white rounded-xl shadow-sm">
-                  <MessageSquare className="h-6 w-6 text-brand-green" />
+                  <MessageSquare className="h-6 w-6 text-brand-blue" />
                 </div>
                 <div>
-                  <p className="font-bold">WhatsApp Order</p>
-                  <p className="text-xs text-brand-muted">Chat with us to finalize</p>
+                  <p className="font-sans font-semibold text-brand-dark">WhatsApp</p>
+                  <p className="font-sans text-xs text-brand-muted">Chat directly with our team</p>
                 </div>
               </label>
             </div>
@@ -131,39 +143,28 @@ export default function CheckoutPage() {
 
           <button
             type="submit"
-            className="w-full bg-brand-blue text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:opacity-95 transition-opacity"
+            className="w-full bg-brand-blue text-white font-sans font-semibold py-5 rounded-2xl text-lg flex items-center justify-center gap-2 hover:bg-brand-blue/90 transition-colors"
           >
-            {formData.paymentMethod === "integrated" ? "Pay Securely Now" : "Send Order to WhatsApp"}
+            {formData.method === "whatsapp" ? "Send via WhatsApp" : "Submit Quote Request"}
             <ChevronRight className="h-5 w-5" />
           </button>
         </form>
 
-        {/* Order Summary Sidebar */}
+        {/* Quote Items Sidebar */}
         <div className="lg:col-span-1">
-          <div className="bg-gray-50 p-8 rounded-3xl border sticky top-24">
-            <h3 className="font-bold text-lg mb-6">Your Order</h3>
+          <div className="bg-brand-surface p-8 rounded-3xl border border-brand-light sticky top-24">
+            <h3 className="font-serif text-lg text-brand-dark mb-6">Items in Your Quote</h3>
             <div className="space-y-4 mb-6 max-h-[300px] overflow-y-auto pr-2">
               {items.map(item => (
                 <div key={item.id} className="flex justify-between text-sm">
-                  <span className="text-brand-muted">{item.name} x{item.quantity}</span>
-                  <span className="font-medium">UGX {(item.price * item.quantity).toLocaleString()}</span>
+                  <span className="font-sans text-brand-muted">{item.name}</span>
+                  <span className="font-sans font-medium text-brand-dark">× {item.quantity}</span>
                 </div>
               ))}
             </div>
-            <div className="border-t pt-6 space-y-3">
-              <div className="flex justify-between text-brand-muted">
-                <span>Subtotal</span>
-                <span>UGX {totalPrice().toLocaleString()}</span>
-              </div>
-              <div className="flex justify-between font-bold text-xl pt-2">
-                <span>Total</span>
-                <span className="text-brand-blue">UGX {totalPrice().toLocaleString()}</span>
-              </div>
-            </div>
-            <div className="mt-8 flex items-center gap-2 text-xs text-brand-muted justify-center">
-              <Lock className="h-3 w-3" />
-              Secure 256-bit SSL Encrypted Payment
-            </div>
+            <p className="font-sans text-xs text-brand-muted text-center border-t border-brand-light pt-4">
+              No payment required — we'll contact you with pricing
+            </p>
           </div>
         </div>
       </div>

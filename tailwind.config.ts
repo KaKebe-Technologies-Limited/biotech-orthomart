@@ -12,12 +12,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          blue: "#003366", // Refined deep blue from logo
-          green: "#008080", // Medical green
-          orange: "#f47c0e", // Accent orange
-          muted: "#8c92a0",
-          dark: "#25262a",
+          blue:    '#0a3d7a',
+          gold:    '#c9a84c',
+          dark:    '#1a1f2e',
+          muted:   '#6b7280',
+          surface: '#f4f6fb',
+          light:   '#e8eef8',
+          white:   '#ffffff',
         },
+      },
+      fontFamily: {
+        sans:  ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-dm-serif)', 'serif'],
       },
     },
   },
