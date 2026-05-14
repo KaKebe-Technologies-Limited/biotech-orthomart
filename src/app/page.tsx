@@ -313,7 +313,8 @@ export default function Home() {
                   className="border border-white/20 rounded-lg px-5 py-3 hover:border-white/50 transition-colors"
                   aria-label="Circleg website"
                 >
-                  <Image src="/images/circleg.svg" alt="Circleg" width={96} height={30} className="h-7 w-auto" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/circleg.svg" alt="Circleg" className="h-7 w-auto" />
                 </a>
                 <a
                   href="https://www.teknimed.com"
