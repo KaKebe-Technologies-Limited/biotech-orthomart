@@ -61,17 +61,11 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer border border-brand-light">
       <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden flex items-center justify-center">
-        {/* Icon — visible by default, fades on hover */}
-        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 z-10">
-          <CategoryIcon className="w-16 h-16 text-brand-blue/25" />
-        </div>
-
-        {/* Product image — hidden by default, fades in on hover */}
         <Image
           src={product.image}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-contain p-6 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"
+          className="object-contain p-6 scale-100 group-hover:scale-105 transition-transform duration-300"
           alt={product.name}
         />
 

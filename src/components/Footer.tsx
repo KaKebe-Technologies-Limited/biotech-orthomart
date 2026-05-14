@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/">
-              <Image src="/images/logo.png" alt="Biotech Orthomart" width={140} height={40} style={{ width: "auto", height: "2.5rem" }} className="brightness-0 invert" />
+              <Image src="/images/logo.png" alt="Biotech Orthomart" width={140} height={40} className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-brand-muted text-sm leading-relaxed font-sans">
               Leading provider of CE/FDA approved orthopaedic solutions in East Africa. Committed to excellence in patient care and medical reliability.
@@ -73,11 +73,11 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <span className="font-semibold text-white">Phone:</span>
-                +256 392 392921
+                <a href="tel:+256392392921" className="hover:text-white transition-colors">+256 392 392921</a>
               </li>
               <li className="flex gap-3">
                 <span className="font-semibold text-white">Email:</span>
-                info@biotechorthomart.com
+                <a href="mailto:info@biotechorthomart.com" className="hover:text-white transition-colors">info@biotechorthomart.com</a>
               </li>
             </ul>
           </div>

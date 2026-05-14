@@ -52,7 +52,7 @@ export default function UtilityBar() {
             <button className="flex items-center gap-1 border border-white/20 rounded px-2 py-0.5 hover:border-brand-gold transition-colors">
               Our Branches <ChevronDown className="w-3 h-3" />
             </button>
-            <div className="absolute right-0 top-full mt-1 bg-white text-brand-dark rounded shadow-lg py-2 w-36 hidden group-hover:block z-50">
+            <div className="absolute right-0 top-full mt-1 bg-white text-brand-dark rounded shadow-lg py-2 w-36 hidden group-hover:block z-[60]">
               <Link href="/contact" className="block px-4 py-1.5 text-xs hover:bg-brand-surface">Kampala (HQ)</Link>
               <Link href="/contact" className="block px-4 py-1.5 text-xs hover:bg-brand-surface">Yumbe</Link>
             </div>

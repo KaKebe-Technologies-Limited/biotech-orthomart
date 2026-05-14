@@ -50,7 +50,8 @@ export default function Navbar() {
               alt="Biotech Orthomart"
               width={140}
               height={40}
-              style={{ width: "auto", height: "2.5rem" }}
+              className="h-10 w-auto"
+              priority
             />
           </Link>
 
@@ -110,7 +111,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
+        <div className="fixed inset-0 z-[60] lg:hidden">
           <div
             className="absolute inset-0 bg-brand-dark/40 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}

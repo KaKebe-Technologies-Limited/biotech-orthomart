@@ -306,19 +306,31 @@ export default function Home() {
 
               {/* Partner logos */}
               <div className="flex items-center gap-6 mb-10">
-                <div className="border border-white/20 rounded-lg px-5 py-3">
-                  <span className="font-sans font-semibold text-white text-sm tracking-wide">CIRCLEG</span>
-                </div>
-                <div className="border border-white/20 rounded-lg px-5 py-3">
-                  <span className="font-sans font-semibold text-white text-sm tracking-wide">TEKNIMED</span>
-                </div>
+                <a
+                  href="https://circleg.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white/20 rounded-lg px-5 py-3 hover:border-white/50 transition-colors"
+                  aria-label="Circleg website"
+                >
+                  <Image src="/images/circleg.svg" alt="Circleg" width={96} height={30} className="h-7 w-auto" />
+                </a>
+                <a
+                  href="https://www.teknimed.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white/20 rounded-lg px-5 py-3 hover:border-white/50 transition-colors"
+                  aria-label="Teknimed website"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.06 36.78" fill="white" className="h-7 w-auto" aria-label="Teknimed" role="img"><polygon points="55.12 10.23 38.55 10.23 38.55 12.85 45.37 12.85 45.37 30.19 48.3 30.19 48.3 12.85 55.12 12.85 55.12 10.23"/><path d="M59.79,14.99c-4.28,0-7.5,3.34-7.5,7.77s3.35,7.77,7.79,7.77c2.62,0,4.6-.86,6.41-2.78l.22-.23-1.85-1.58-.2.2c-1.32,1.32-2.76,1.93-4.52,1.93-2.59,0-4.53-1.66-4.94-4.16h11.84l.02-.27c.03-.34.03-.57.03-.77,0-4.71-2.93-7.88-7.3-7.88ZM59.73,17.39c2.83,0,4.14,2.12,4.45,4.21h-8.98c.42-2.5,2.25-4.21,4.53-4.21Z"/><rect x="69.04" y="9.4" width="2.84" height="20.8"/><polygon points="83.2 30.2 79.76 30.2 72.95 21.75 79.46 15.29 83.11 15.29 76.47 21.76 83.2 30.2"/><path d="M92.21,14.99c-2.01,0-3.64.73-4.84,2.17v-1.87h-2.84v14.9h2.84v-8.49c0-2.46,1.73-4.18,4.2-4.18s3.85,1.46,3.85,4.02v8.66h2.84v-9.18c0-3.66-2.38-6.03-6.05-6.03Z"/><rect x="100.86" y="9.81" width="3.16" height="2.95"/><rect x="101" y="15.29" width="2.84" height="14.9"/><path d="M124.57,14.99c-2.2,0-3.92.85-5.25,2.59-1.02-1.68-2.73-2.59-4.85-2.59-2.26,0-3.62,1.02-4.55,2.12v-1.82h-2.84v14.9h2.84v-8.46c0-2.44,1.63-4.21,3.88-4.21s3.56,1.48,3.56,3.96v8.71h2.81v-8.55c0-2.85,1.94-4.13,3.85-4.13,2.32,0,3.59,1.43,3.59,4.02v8.66h2.84v-9.15c0-3.73-2.25-6.06-5.88-6.06Z"/><path d="M139.82,14.99c-4.28,0-7.5,3.34-7.5,7.77s3.35,7.77,7.79,7.77c2.62,0,4.6-.86,6.41-2.78l.22-.23-1.85-1.58-.2.2c-1.32,1.32-2.76,1.93-4.52,1.93-2.59,0-4.53-1.66-4.94-4.16h11.84l.02-.27c.03-.34.03-.57.03-.77,0-4.71-2.93-7.88-7.3-7.88ZM139.76,17.39c2.83,0,4.14,2.12,4.45,4.21h-8.98c.42-2.5,2.25-4.21,4.53-4.21Z"/><path d="M161.23,9.4v8.07c-1.45-1.65-3.28-2.48-5.45-2.48-3.62,0-7.47,2.71-7.47,7.74v.06c0,5.01,3.85,7.71,7.47,7.71,2.18,0,3.97-.85,5.45-2.6v2.3h2.84V9.4h-2.84ZM156.18,27.99c-2.89,0-4.99-2.2-4.99-5.29s2.05-5.2,4.99-5.2c2.52,0,5.13,1.95,5.13,5.2v.06c0,3.23-2.66,5.23-5.13,5.23Z"/><path d="M29.46,0H5.7c2.44.93,4.9,1.74,7.35,2.57,4.45,1.49,8.89,3.03,13.36,4.46.96.42,2,.62,3.05.61,1.05,0,2.09-.2,3.05-.61,4.47-1.43,8.91-2.97,13.36-4.46,2.45-.82,4.91-1.64,7.35-2.57h-23.76Z"/><path d="M28.29,9.7c-.2-.11-.42-.21-.64-.29h0c-1.38-.43-2.71-.93-4.07-1.39-2.3-.77-4.61-1.53-7.21-2.38.99.94,1.35,2.31.94,3.58-.66,2.63-1.24,5.27-1.83,7.91-.91,4.04-1.81,8.08-2.7,12.12-.55,2.49-1.1,4.97-1.65,7.45l.16.07c1.58-1.89,3.16-3.78,4.74-5.68,3.34-4.01,6.67-8.01,10-12.02,1.22-1.48,2.5-2.93,3.59-4.5,1.06-1.69.46-3.88-1.32-4.88"/><path d="M15.19,9.57h0c.8-2.05-.29-4.32-2.45-5.09,0,0,0,0,0,0-3.01-1.09-6.05-2.07-9.08-3.09C2.47.99,1.28.6.08.21l-.08.16c.08.09.16.18.25.26,2.22,1.69,4.44,3.39,6.68,5.06,2.05,1.53,4.09,3.08,6.19,4.56.95.67,1.7.38,2.08-.68"/></svg>
+                </a>
               </div>
 
               <Link
-                href="/about"
+                href="/products"
                 className="inline-block border border-white/40 text-white font-sans font-semibold px-8 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition-colors"
               >
-                About Our Partners
+                View our products
               </Link>
             </div>
 
