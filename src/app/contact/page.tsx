@@ -1,6 +1,8 @@
 "use client";
 
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { useActionState } from "react";
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { sendContactEmail } from "./actions";
 
 const branches = [
   {
@@ -81,6 +83,8 @@ const socialLinks = [
 ];
 
 export default function ContactPage() {
+  const [state, formAction, pending] = useActionState(sendContactEmail, null);
+
   return (
     <div className="flex flex-col">
       {/* Header */}
@@ -207,66 +211,88 @@ export default function ContactPage() {
               <p className="font-sans text-sm text-brand-muted mb-8">
                 We'll get back to you within one business day.
               </p>
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {state?.ok ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <CheckCircle className="h-12 w-12 text-green-500 mb-4" />
+                  <h4 className="font-serif text-2xl text-brand-dark mb-2">Message sent!</h4>
+                  <p className="font-sans text-brand-muted">{state.message}</p>
+                </div>
+              ) : (
+                <form action={formAction} className="space-y-5">
+                  {state?.ok === false && (
+                    <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl">
+                      <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <p className="font-sans text-sm text-red-700">{state.message}</p>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="space-y-1.5">
+                      <label htmlFor="name" className="font-sans text-sm font-semibold text-brand-dark">Name <span className="text-red-500">*</span></label>
+                      <input
+                        id="name" name="name" type="text" required
+                        className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor="organisation" className="font-sans text-sm font-semibold text-brand-dark">Organisation</label>
+                      <input
+                        id="organisation" name="organisation" type="text"
+                        className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
+                        placeholder="Hospital / clinic / NGO"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="space-y-1.5">
+                      <label htmlFor="email" className="font-sans text-sm font-semibold text-brand-dark">Email <span className="text-red-500">*</span></label>
+                      <input
+                        id="email" name="email" type="email" required
+                        className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor="phone" className="font-sans text-sm font-semibold text-brand-dark">Phone</label>
+                      <input
+                        id="phone" name="phone" type="tel"
+                        className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
+                        placeholder="+256 XXX XXX XXX"
+                      />
+                    </div>
+                  </div>
                   <div className="space-y-1.5">
-                    <label className="font-sans text-sm font-semibold text-brand-dark">Name</label>
+                    <label htmlFor="subject" className="font-sans text-sm font-semibold text-brand-dark">Subject</label>
                     <input
-                      type="text"
+                      id="subject" name="subject" type="text"
                       className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
-                      placeholder="Your name"
+                      placeholder="How can we help?"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <label className="font-sans text-sm font-semibold text-brand-dark">Organisation</label>
-                    <input
-                      type="text"
-                      className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
-                      placeholder="Hospital / clinic / NGO"
+                    <label htmlFor="message" className="font-sans text-sm font-semibold text-brand-dark">Message <span className="text-red-500">*</span></label>
+                    <textarea
+                      id="message" name="message" rows={5} required
+                      className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm resize-none"
+                      placeholder="Describe your requirements..."
                     />
                   </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-sm font-semibold text-brand-dark">Email</label>
-                    <input
-                      type="email"
-                      className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label className="font-sans text-sm font-semibold text-brand-dark">Phone</label>
-                    <input
-                      type="tel"
-                      className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
-                      placeholder="+256 XXX XXX XXX"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-1.5">
-                  <label className="font-sans text-sm font-semibold text-brand-dark">Subject</label>
-                  <input
-                    type="text"
-                    className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm"
-                    placeholder="How can we help?"
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label className="font-sans text-sm font-semibold text-brand-dark">Message</label>
-                  <textarea
-                    rows={5}
-                    className="w-full p-4 border border-brand-light rounded-xl bg-brand-surface outline-none focus:ring-2 focus:ring-brand-blue font-sans text-sm resize-none"
-                    placeholder="Describe your requirements..."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-brand-blue text-white font-sans font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-brand-blue/90 transition-colors"
-                >
-                  Send Message <Send className="h-4 w-4" />
-                </button>
-              </form>
+                  <p className="font-sans text-xs text-brand-muted">
+                    Your details are used only to respond to your enquiry and are not shared with third parties.
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={pending}
+                    className="w-full bg-brand-blue text-white font-sans font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-brand-blue/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {pending ? (
+                      <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</>
+                    ) : (
+                      <>Send Message <Send className="h-4 w-4" /></>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
