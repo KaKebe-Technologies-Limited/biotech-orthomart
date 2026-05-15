@@ -244,23 +244,18 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map(({ label, image, Icon, slug }) => (
+            {categories.map(({ label, image, slug }) => (
               <Link
                 key={label}
                 href={`/products?category=${slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-light"
               >
-                <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden flex items-center justify-center">
-                  {/* Icon — visible by default, fades on hover */}
-                  <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 z-10">
-                    <Icon className="w-16 h-16 text-brand-blue/25" />
-                  </div>
-                  {/* Image — hidden by default, fades in on hover */}
+                <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden">
                   <Image
                     src={image}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"
+                    className="object-cover scale-100 group-hover:scale-105 transition-transform duration-300"
                     alt={label}
                   />
                 </div>
