@@ -16,6 +16,13 @@ import {
   Heart,
   User,
   ArrowRight,
+  Eye,
+  Target,
+  Award,
+  BadgeCheck,
+  Microscope,
+  Globe,
+  ChevronDown,
 } from "lucide-react";
 
 const categories = [
@@ -231,6 +238,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Vision & Mission ──────────────────────────────────────────────── */}
+      <section className="bg-brand-surface py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
+              Our Purpose
+            </p>
+            <h2 className="font-serif text-4xl text-brand-dark">Vision &amp; Mission</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 border border-brand-light shadow-sm">
+              <div className="h-12 w-12 bg-brand-blue/10 rounded-xl flex items-center justify-center mb-6">
+                <Eye className="w-6 h-6 text-brand-blue" />
+              </div>
+              <h3 className="font-serif text-2xl text-brand-dark mb-4">Our Vision</h3>
+              <p className="font-sans text-brand-muted/50 leading-relaxed italic text-sm">
+                [Vision statement — content to be provided by the client]
+              </p>
+            </div>
+            <div className="bg-brand-blue rounded-2xl p-8 shadow-sm">
+              <div className="h-12 w-12 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-serif text-2xl text-white mb-4">Our Mission</h3>
+              <p className="font-sans text-white/40 leading-relaxed italic text-sm">
+                [Mission statement — content to be provided by the client]
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── C: Product Categories Grid ────────────────────────────────────── */}
       <section className="bg-brand-surface py-20">
         <div className="container mx-auto px-4">
@@ -390,6 +429,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Certifications ────────────────────────────────────────────────── */}
+      <section className="bg-white py-16 border-y border-brand-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
+              Compliance &amp; Quality
+            </p>
+            <h2 className="font-serif text-4xl text-brand-dark">Certified to the highest standards</h2>
+            <p className="font-sans text-brand-muted mt-3 max-w-xl mx-auto">
+              Every product we supply meets international regulatory requirements before it reaches a patient or clinician.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                Icon: BadgeCheck,
+                title: "CE Marked",
+                body: "All devices comply with EU medical device regulations, confirming safety and performance standards.",
+              },
+              {
+                Icon: Award,
+                title: "FDA Cleared",
+                body: "Products cleared by the US Food & Drug Administration — the global benchmark for medical device safety.",
+              },
+              {
+                Icon: Microscope,
+                title: "ISO 13485",
+                body: "Our supply chain operates under ISO 13485 quality management standards for medical devices.",
+              },
+              {
+                Icon: Globe,
+                title: "Uganda NDA Compliant",
+                body: "All imports are cleared through Uganda's National Drug Authority, meeting local regulatory requirements.",
+              },
+            ].map(({ Icon, title, body }) => (
+              <div key={title} className="bg-brand-surface rounded-2xl p-6 border border-brand-light flex flex-col gap-4">
+                <div className="h-12 w-12 bg-brand-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-brand-blue" />
+                </div>
+                <div>
+                  <h3 className="font-sans font-semibold text-brand-dark mb-1">{title}</h3>
+                  <p className="font-sans text-sm text-brand-muted leading-relaxed">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── F: Testimonials ───────────────────────────────────────────────── */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
@@ -417,6 +505,56 @@ export default function Home() {
                   <p className="font-sans text-brand-muted text-xs mt-0.5">{role}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ───────────────────────────────────────────────────────────── */}
+      <section className="bg-brand-surface py-20">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
+              FAQ
+            </p>
+            <h2 className="font-serif text-4xl text-brand-dark">Frequently asked questions</h2>
+          </div>
+          <div className="space-y-3">
+            {[
+              {
+                q: "Do you sell directly to individual patients?",
+                a: "Yes. While most of our clients are hospitals, clinics, and institutions, we also supply individual patients who require orthotics, prosthetics, or mobility aids. Contact us and our team will guide you to the right product.",
+              },
+              {
+                q: "How does the quote process work?",
+                a: "Browse our product catalogue, add items to your quote basket, and submit your request. Our team reviews each enquiry and responds with pricing and availability within one business day — no payment is required upfront.",
+              },
+              {
+                q: "Are all your products CE and FDA certified?",
+                a: "Yes. Every device in our catalogue carries CE marking or FDA clearance, and all imports are cleared through Uganda's National Drug Authority (NDA). We only partner with manufacturers who meet international quality standards.",
+              },
+              {
+                q: "Do you deliver outside Kampala?",
+                a: "Yes. We deliver across Uganda, including to our Yumbe branch in West Nile. For large institutional orders, we offer logistics coordination directly to your facility. Contact us to discuss delivery terms for your location.",
+              },
+              {
+                q: "Can I get clinical support with product selection?",
+                a: "Absolutely. Our team includes clinically trained staff who can advise on product suitability for specific indications. Book a consultation through our contact page and we'll arrange a call or in-person meeting.",
+              },
+              {
+                q: "How do I become a distributor or procurement partner?",
+                a: "We work with pharmacies, government institutions, NGOs, and private distributors across Uganda. Reach out via our contact form or WhatsApp and our partnerships team will get in touch.",
+              },
+            ].map(({ q, a }) => (
+              <details key={q} className="group bg-white border border-brand-light rounded-xl overflow-hidden">
+                <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer font-sans font-semibold text-brand-dark hover:text-brand-blue transition-colors list-none">
+                  {q}
+                  <ChevronDown className="w-5 h-5 text-brand-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                </summary>
+                <div className="px-6 pb-6 font-sans text-sm text-brand-muted leading-relaxed border-t border-brand-light pt-4">
+                  {a}
+                </div>
+              </details>
             ))}
           </div>
         </div>

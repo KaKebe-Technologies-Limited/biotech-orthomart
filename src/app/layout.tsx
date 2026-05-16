@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import UtilityBar from "@/components/UtilityBar";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 import { Toaster } from "sonner";
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -79,6 +80,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppFAB />
         <Toaster position="bottom-right" richColors />
       </body>
     </html>
