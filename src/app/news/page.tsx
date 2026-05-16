@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Calendar, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "News & Media",
+  description:
+    "Latest news, product launches, healthcare events, and educational content from Biotech Orthomart — Uganda's orthopaedic solutions provider.",
+  openGraph: {
+    title: "News & Media | Biotech Orthomart",
+    description:
+      "Latest news, product launches, and healthcare updates from Biotech Orthomart.",
+  },
+};
 
 const articles = [
   {

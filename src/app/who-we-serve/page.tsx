@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Who We Serve",
+  description:
+    "Biotech Orthomart serves hospitals, clinics, pharmacies, government institutions, NGOs, rehabilitation centres, and individual patients across Uganda with certified orthopaedic products.",
+  openGraph: {
+    title: "Who We Serve | Biotech Orthomart",
+    description:
+      "Serving hospitals, clinics, pharmacies, government institutions, NGOs, and individual patients across Uganda with certified orthopaedic products.",
+  },
+};
 import {
   Building2,
   FlaskConical,

@@ -17,9 +17,41 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.biotechorthomart.com";
+
 export const metadata: Metadata = {
-  title: "Biotech Orthomart | Premium Orthopaedic Solutions",
-  description: "Discover top-quality orthopaedic implants, orthotics, and trauma devices in Uganda.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Biotech Orthomart | CE/FDA Approved Orthopaedic Solutions in Uganda",
+    template: "%s | Biotech Orthomart",
+  },
+  description:
+    "Uganda's trusted distributor of CE and FDA approved orthopaedic implants, orthotics, prosthetics, and surgical instruments. Serving hospitals, clinics, NGOs, and healthcare institutions across East Africa.",
+  keywords: [
+    "orthopaedic implants Uganda",
+    "orthotics Uganda",
+    "prosthetics Kampala",
+    "surgical instruments Uganda",
+    "CE FDA approved medical devices Uganda",
+    "Biotech Orthomart",
+    "medical supplies East Africa",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_UG",
+    siteName: "Biotech Orthomart",
+    title: "Biotech Orthomart | CE/FDA Approved Orthopaedic Solutions in Uganda",
+    description:
+      "Uganda's trusted distributor of CE and FDA approved orthopaedic implants, orthotics, prosthetics, and surgical instruments.",
+    images: [{ url: "/images/hero_1.jpg", width: 1200, height: 630, alt: "Biotech Orthomart" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Biotech Orthomart | CE/FDA Approved Orthopaedic Solutions in Uganda",
+    description:
+      "Uganda's trusted distributor of CE and FDA approved orthopaedic implants, orthotics, prosthetics, and surgical instruments.",
+    images: ["/images/hero_1.jpg"],
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },

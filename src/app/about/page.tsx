@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Biotech Orthomart Ltd — Kampala-based importers and distributors of world-class CE and FDA approved orthopaedic solutions, proudly serving Uganda's healthcare sector.",
+  openGraph: {
+    title: "About Us | Biotech Orthomart",
+    description:
+      "Learn about Biotech Orthomart Ltd — Kampala-based importers and distributors of world-class CE and FDA approved orthopaedic solutions.",
+    images: [{ url: "/images/about_1.jpg", width: 1200, height: 630, alt: "Biotech Orthomart team" }],
+  },
+};
 import {
   ShieldCheck,
   Truck,

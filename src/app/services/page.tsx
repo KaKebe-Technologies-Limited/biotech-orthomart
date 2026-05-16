@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Professional orthopaedic services including surgery support, prosthetic fitting, gait training, technical guidance, and clinical consultation — delivered by certified specialists across Uganda.",
+  openGraph: {
+    title: "Our Services | Biotech Orthomart",
+    description:
+      "Surgery support, prosthetic fitting, gait training, and clinical consultation — certified orthopaedic services across Uganda.",
+  },
+};
 import {
   Stethoscope,
   PersonStanding,
