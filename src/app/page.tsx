@@ -27,37 +27,37 @@ import {
 const categories = [
   {
     label: "Implants",
-    image: "/images/implant-1.jpg",
+    image: "/images/implant.jpg",
     Icon: Activity,
     slug: "Implant",
   },
   {
     label: "Orthotics",
-    image: "/images/orthotic-1.jpg",
+    image: "/images/orthotic.png",
     Icon: Shield,
     slug: "Orthotic",
   },
   {
     label: "Braces",
-    image: "/images/crutch-1.jpg",
+    image: "/images/back-brace.png",
     Icon: PersonStanding,
     slug: "Brace",
   },
   {
     label: "Crutches",
-    image: "/images/crutch-3.jpg",
+    image: "/images/crutch-pair.png",
     Icon: PersonStanding,
     slug: "Crutches",
   },
   {
     label: "Surgical Instruments",
-    image: "/images/shelf-1.jpg",
+    image: "/images/instr.png",
     Icon: Stethoscope,
     slug: "Surgical Instruments",
   },
   {
     label: "Consumables",
-    image: "/images/shelf-2.jpg",
+    image: "/images/consumables.jpg",
     Icon: Package,
     slug: "Consumables",
   },
@@ -252,8 +252,8 @@ export default function Home() {
                 <Eye className="w-6 h-6 text-brand-blue" />
               </div>
               <h3 className="font-serif text-2xl text-brand-dark mb-4">Our Vision</h3>
-              <p className="font-sans text-brand-muted/50 leading-relaxed italic text-sm">
-                [Vision statement — content to be provided by the client]
+              <p className="font-sans text-brand-muted leading-relaxed">
+                To become a global leader in regenerative orthopedics and orthopedic biotechnology.
               </p>
             </div>
             <div className="bg-brand-blue rounded-2xl p-8 shadow-sm">
@@ -261,8 +261,8 @@ export default function Home() {
                 <Target className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-serif text-2xl text-white mb-4">Our Mission</h3>
-              <p className="font-sans text-white/40 leading-relaxed italic text-sm">
-                [Mission statement — content to be provided by the client]
+              <p className="font-sans text-white/80 leading-relaxed">
+                To advance orthopedic care through innovative biotech solutions that improve patient outcomes and enhance quality of life.
               </p>
             </div>
           </div>

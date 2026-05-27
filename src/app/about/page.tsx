@@ -24,10 +24,10 @@ import {
 
 const leadership = [
   {
-    name: "Executive Director",
-    role: "Biotech Orthomart Ltd",
+    name: "Dr Edmond O Odull, MD",
+    role: "CEO & Executive Director",
     image: "/images/man-1.jpg",
-    bio: "Leading Biotech Orthomart's mission to make certified orthopaedic and rehabilitative products accessible across Uganda's healthcare system.",
+    bio: "A specialist in biotechnology and orthopaedics, leading Biotech Orthomart's mission to advance musculoskeletal health through innovation.",
   },
   {
     name: "Operations Manager",
@@ -137,8 +137,56 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Core Focus & Capabilities */}
+      <section className="py-20 bg-brand-surface border-y border-brand-light">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="font-serif text-3xl text-brand-dark mb-8 flex items-center gap-3">
+                <span className="w-8 h-1 bg-brand-gold rounded-full" />
+                Core Focus Areas
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Regenerative medicine and tissue engineering for joint and bone repair",
+                  "Advanced orthopedic implants and devices",
+                  "Biological therapeutics for musculoskeletal conditions",
+                  "Minimally invasive orthopedic solutions",
+                  "Joint preservation technologies",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-brand-light">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 shrink-0" />
+                    <span className="font-sans text-brand-dark font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-serif text-3xl text-brand-dark mb-8 flex items-center gap-3">
+                <span className="w-8 h-1 bg-brand-blue rounded-full" />
+                Key Capabilities
+              </h3>
+              <div className="space-y-4">
+                {[
+                  "Proprietary biotechnology platforms",
+                  "Clinical research and development expertise",
+                  "Regulatory approval and compliance excellence",
+                  "Manufacturing and quality assurance",
+                  "Strategic healthcare partnerships",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-brand-light">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 shrink-0" />
+                    <span className="font-sans text-brand-dark font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Leadership Team */}
-      <section className="py-20 bg-brand-surface">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
@@ -150,7 +198,7 @@ export default function AboutPage() {
             {leadership.map((person) => (
               <div
                 key={person.name}
-                className="bg-white rounded-2xl overflow-hidden border border-brand-light shadow-sm hover:shadow-lg transition-shadow"
+                className="bg-brand-surface rounded-2xl overflow-hidden border border-brand-light shadow-sm hover:shadow-lg transition-shadow"
               >
                 <div className="relative aspect-3/2 overflow-hidden">
                   <Image
@@ -175,7 +223,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-surface">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
@@ -187,7 +235,7 @@ export default function AboutPage() {
             {whyChooseUs.map((item) => (
               <div
                 key={item.title}
-                className="flex gap-5 p-6 bg-brand-surface rounded-2xl border border-brand-light"
+                className="flex gap-5 p-6 bg-white rounded-2xl border border-brand-light shadow-sm"
               >
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center shrink-0">
                   <item.icon className="w-6 h-6 text-brand-blue" />

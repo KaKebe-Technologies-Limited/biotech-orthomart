@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingBag, Search, Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ShoppingBag, Menu, X } from "lucide-react";
 import { useQuoteBasket } from "@/store/useQuoteBasket";
 import { useEffect, useState } from "react";
 import QuoteDrawer from "@/components/QuoteDrawer";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -68,13 +70,6 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button
-              className="p-2 hover:bg-brand-surface rounded-full transition-colors"
-              aria-label="Search"
-            >
-              <Search className="h-5 w-5 text-brand-dark" />
-            </button>
-
             {/* Quote basket icon — opens drawer */}
             <button
               onClick={openDrawer}

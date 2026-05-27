@@ -1,34 +1,314 @@
 [
   {
-    "id": "1",
-    "name": "Implant",
-    "price": 200000,
-    "image": "/images/product_01.png",
+    "id": "bone-cement",
+    "name": "Bone Cement (Different Viscosities)",
+    "price": 0,
+    "image": "/images/products/bone-cement.jpg",
+    "category": "Consumables",
+    "description": "High-quality bone cement available in different viscosities for various surgical needs."
+  },
+  {
+    "id": "fixed-bipolar-prosthesis",
+    "name": "Fixed Bipolar Prosthesis",
+    "price": 0,
+    "image": "/images/products/fixed-bipolar-prosthesis.jpg",
     "category": "Implant",
-    "description": "Durable orthopaedic implant for bone support and recovery."
+    "description": "Precision-engineered fixed bipolar prosthesis for hip replacement surgeries."
   },
   {
-    "id": "2",
-    "name": "Orthotic",
-    "price": 150000,
-    "image": "/images/product_02.png",
-    "category": "Orthotic",
-    "description": "High-quality orthotic support designed for comfort and mobility."
+    "id": "circleg-prosthetic-limbs",
+    "name": "Circleg Prosthetic Limbs",
+    "price": 0,
+    "image": "/images/products/circleg-prosthetic-limbs.jpg",
+    "category": "Prosthetics",
+    "description": "Innovative and affordable prosthetic limb solutions by Circleg."
   },
   {
-    "id": "3",
-    "name": "Crutches",
-    "price": 120000,
-    "image": "/images/product_03.png",
-    "category": "Crutches",
-    "description": "Lightweight and adjustable crutches for safe mobility support."
+    "id": "surgical-gowns",
+    "name": "Sterile Disposable Surgical Gowns",
+    "price": 0,
+    "image": "/images/products/surgical-gowns.jpg",
+    "category": "Consumables",
+    "description": "Sterile and disposable gowns for maximum protection in surgical environments."
   },
   {
-    "id": "4",
-    "name": "Brace",
-    "price": 180000,
-    "image": "/images/back brace.png",
+    "id": "surgical-drapes",
+    "name": "Sterile Surgical Disposable Drapes and Packs",
+    "price": 0,
+    "image": "/images/products/surgical-drapes.jpg",
+    "category": "Consumables",
+    "description": "A variety of sterile drapes and packs for different surgical procedures."
+  },
+  {
+    "id": "titanium-locking-bolts",
+    "name": "Titanium Locking Bolts",
+    "price": 0,
+    "image": "/images/products/titanium-locking-bolts.jpg",
+    "category": "Implant",
+    "description": "Titanium locking bolts for intramedullary nailing systems."
+  },
+  {
+    "id": "cortex-locking-screws",
+    "name": "Cortex Locking Head Screws (5.0)",
+    "price": 0,
+    "image": "/images/products/cortex-locking-screws.jpg",
+    "category": "Implant",
+    "description": "5.0mm cortex locking head screws for stable internal fixation."
+  },
+  {
+    "id": "titanium-femur-nail",
+    "name": "XL Titanium Femur Nail",
+    "price": 0,
+    "image": "/images/products/titanium-femur-nail.jpg",
+    "category": "Implant",
+    "description": "Extra-long titanium femur nails for complex fracture management."
+  },
+  {
+    "id": "expert-tibia-nails",
+    "name": "Expert Tibia Nails",
+    "price": 0,
+    "image": "/images/products/expert-tibia-nails.jpg",
+    "category": "Implant",
+    "description": "Advanced tibia nailing system for stable fracture fixation."
+  },
+  {
+    "id": "supracondylar-femur-nails",
+    "name": "Supracondylar Femur Nails",
+    "price": 0,
+    "image": "/images/products/expert-tibia-nails.jpg",
+    "category": "Implant",
+    "description": "Nails specifically designed for supracondylar femur fractures."
+  },
+  {
+    "id": "prosthetic-components",
+    "name": "Lower Limb Prosthetic Components",
+    "price": 0,
+    "image": "/images/products/prosthetic-components.jpg",
+    "category": "Prosthetics",
+    "description": "A range of components for lower limb prosthetic assembly."
+  },
+  {
+    "id": "titanium-cortex-screws",
+    "name": "Titanium Cortex Screws",
+    "price": 0,
+    "image": "/images/products/titanium-cortex-screws.jpg",
+    "category": "Implant",
+    "description": "Standard titanium cortex screws for various orthopaedic applications."
+  },
+  {
+    "id": "distal-femur-plates",
+    "name": "Distal Femur Locking Plates",
+    "price": 0,
+    "image": "/images/products/distal-femur-plates.jpg",
+    "category": "Implant",
+    "description": "Anatomically shaped locking plates for distal femur fractures."
+  },
+  {
+    "id": "distal-radius-plates",
+    "name": "Distal Radius Volar Variable Angle Locking Plates",
+    "price": 0,
+    "image": "/images/products/distal-radius-plates.jpg",
+    "category": "Implant",
+    "description": "Variable angle locking plates for complex distal radius fractures."
+  },
+  {
+    "id": "walker-boots",
+    "name": "Pneumatic Walker Boots",
+    "price": 0,
+    "image": "/images/products/walker-boots.jpg",
     "category": "Brace",
-    "description": "Durable back brace for posture correction and lumbar support."
+    "description": "Inflatable walker boots for controlled rehabilitation and immobilization."
+  },
+  {
+    "id": "blade-screws",
+    "name": "Blade Screws",
+    "price": 0,
+    "image": "/images/products/blade-screws.jpg",
+    "category": "Implant",
+    "description": "Specialized blade screws for pertrochanteric fracture fixation."
+  },
+  {
+    "id": "knee-braces-variety",
+    "name": "Knee Braces (Variety)",
+    "price": 0,
+    "image": "/images/products/knee-braces.jpg",
+    "category": "Brace",
+    "description": "A wide variety of knee braces for support, stability, and recovery."
+  },
+  {
+    "id": "mobility-aids",
+    "name": "Mobility Aids",
+    "price": 0,
+    "image": "/images/products/mobility-aids.jpg",
+    "category": "Crutches",
+    "description": "Various mobility aids to assist in daily movement and rehabilitation."
+  },
+  {
+    "id": "instrumentation-sets",
+    "name": "Instrumentation Sets for Fracture Care",
+    "price": 0,
+    "image": "/images/products/instrumentation-sets.jpg",
+    "category": "Surgical Instruments",
+    "description": "Complete instrumentation sets for various fracture fixation procedures."
+  },
+  {
+    "id": "cannulated-screws",
+    "name": "Cannulated Screws",
+    "price": 0,
+    "image": "/images/products/cannulated-screws.jpg",
+    "category": "Implant",
+    "description": "Cannulated screws for minimally invasive internal fixation."
+  },
+  {
+    "id": "proximal-tibia-plates",
+    "name": "Proximal Tibia Anatomical Locking Plates",
+    "price": 0,
+    "image": "/images/products/proximal-tibia-plates.jpg",
+    "category": "Implant",
+    "description": "Anatomical locking plates for proximal tibia fracture management."
+  },
+  {
+    "id": "hip-prosthesis",
+    "name": "Bipolar Hip Prosthesis",
+    "price": 0,
+    "image": "/images/products/hip-prosthesis.jpg",
+    "category": "Implant",
+    "description": "Quality bipolar hip prosthesis for partial hip arthroplasty."
+  },
+  {
+    "id": "philos-plates",
+    "name": "Philos Plates",
+    "price": 0,
+    "image": "/images/products/philos-plates.jpg",
+    "category": "Implant",
+    "description": "Proximal Humerus Internal Locking System (PHILOS) for humeral fractures."
+  },
+  {
+    "id": "fracture-care-orthotics",
+    "name": "Fracture Care Orthotics",
+    "price": 0,
+    "image": "/images/products/fracture-care-orthotics.jpg",
+    "category": "Orthotic",
+    "description": "Specialized orthotics designed for the management and care of fractures."
+  },
+  {
+    "id": "upper-limb-braces",
+    "name": "Upper Limb Braces",
+    "price": 0,
+    "image": "/images/products/upper-limb-braces.jpg",
+    "category": "Brace",
+    "description": "Braces for elbow, wrist, and shoulder support and immobilization."
+  },
+  {
+    "id": "tlsb-brace",
+    "name": "Thoracolumbosacral Brace (TLSB)",
+    "price": 0,
+    "image": "/images/products/tlsb-brace.jpg",
+    "category": "Brace",
+    "description": "Comprehensive spinal support for the thoracic, lumbar, and sacral regions."
+  },
+  {
+    "id": "neolife-knee-braces",
+    "name": "Neolife Knee Braces",
+    "price": 0,
+    "image": "/images/products/neolife-knee-braces.jpg",
+    "category": "Brace",
+    "description": "Premium Neolife brand knee braces for advanced support and comfort."
+  },
+  {
+    "id": "clavicle-brace",
+    "name": "Clavicle Brace/Splint",
+    "price": 0,
+    "image": "/images/products/clavicle-brace.jpg",
+    "category": "Brace",
+    "description": "Effective immobilization and support for clavicle fractures and injuries."
+  },
+  {
+    "id": "foot-ankle-braces",
+    "name": "Foot and Ankle Braces",
+    "price": 0,
+    "image": "/images/products/foot-ankle-braces.jpg",
+    "category": "Brace",
+    "description": "Supports and stabilizers for various foot and ankle conditions."
+  },
+  {
+    "id": "knee-immobilizer",
+    "name": "Knee Immobilizer",
+    "price": 0,
+    "image": "/images/products/knee-immobilizer.jpg",
+    "category": "Brace",
+    "description": "Rigid support for complete knee immobilization when required."
+  },
+  {
+    "id": "cervical-spine-immob",
+    "name": "Cervical Spine Immobilization",
+    "price": 0,
+    "image": "/images/products/cervical-spine-immob.jpg",
+    "category": "Brace",
+    "description": "Cervical collars and stabilizers for neck and upper spine support."
+  },
+  {
+    "id": "elbow-crutches",
+    "name": "Elbow Crutches",
+    "price": 0,
+    "image": "/images/products/elbow-crutches.jpg",
+    "category": "Crutches",
+    "description": "Durable and ergonomic elbow crutches for mobility assistance."
+  },
+  {
+    "id": "walking-frames",
+    "name": "Walking Frames",
+    "price": 0,
+    "image": "/images/products/walking-frames.jpg",
+    "category": "Crutches",
+    "description": "Stable walking frames to assist individuals with balance and mobility."
+  },
+  {
+    "id": "wheelchairs",
+    "name": "Wheelchairs (All Types)",
+    "price": 0,
+    "image": "/images/products/wheelchairs.jpg",
+    "category": "Crutches",
+    "description": "A full range of wheelchairs including manual and specialized models."
+  },
+  {
+    "id": "paediatric-fracture-care",
+    "name": "Paediatric Fracture Care Products",
+    "price": 0,
+    "image": "/images/products/paediatric-fracture-care.jpg",
+    "category": "Implant",
+    "description": "Specially sized implants and devices for paediatric orthopaedic care."
+  },
+  {
+    "id": "rom-knee-braces",
+    "name": "ROM Knee Braces",
+    "price": 0,
+    "image": "/images/products/rom-knee-braces.jpg",
+    "category": "Brace",
+    "description": "Range of Motion (ROM) knee braces for controlled post-operative recovery."
+  },
+  {
+    "id": "distal-humerus-plates",
+    "name": "Distal Humerus Anatomical Locking Plates",
+    "price": 0,
+    "image": "/images/products/distal-humerus-plates.jpg",
+    "category": "Implant",
+    "description": "Anatomically contoured locking plates for distal humerus fractures."
+  },
+  {
+    "id": "proximal-tibia-osteotomy",
+    "name": "Proximal Tibia Osteotomy Plates",
+    "price": 0,
+    "image": "/images/products/proximal-tibia-osteotomy.jpg",
+    "category": "Implant",
+    "description": "Plates designed for proximal tibia osteotomy procedures."
+  },
+  {
+    "id": "clavicle-s-plates",
+    "name": "Clavicle 'S' Plates",
+    "price": 0,
+    "image": "/images/products/clavicle-s-plates.jpg",
+    "category": "Implant",
+    "description": "S-shaped locking plates for clavicle fracture fixation."
   }
 ]

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import products from "@/data/products.json";
 import ProductCard from "@/components/ProductCard";
 import { cn } from "@/lib/utils";
+import { Search, X } from "lucide-react";
 
 const CATEGORIES: { label: string; value: string }[] = [
   { label: "All", value: "All" },
@@ -18,19 +19,36 @@ const CATEGORIES: { label: string; value: string }[] = [
 
 export default function ShopPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const cat = params.get("category");
+    const q = params.get("q");
+
     if (cat && CATEGORIES.some((c) => c.value === cat)) {
       setActiveCategory(cat);
+    }
+    if (q) {
+      setSearchQuery(q);
     }
   }, []);
 
   const filtered = useMemo(() => {
-    if (activeCategory === "All") return products;
-    return products.filter((p) => p.category === activeCategory);
-  }, [activeCategory]);
+    let result = products;
+    if (activeCategory !== "All") {
+      result = result.filter((p) => p.category === activeCategory);
+    }
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q)
+      );
+    }
+    return result;
+  }, [activeCategory, searchQuery]);
 
   return (
     <div className="flex flex-col">
@@ -52,21 +70,42 @@ export default function ShopPage() {
 
       {/* Sticky filter bar */}
       <div className="sticky top-16 z-20 bg-white border-b border-brand-light shadow-sm">
-        <div className="container mx-auto px-4 py-3 flex items-center gap-2 flex-wrap">
-          {CATEGORIES.map(({ label, value }) => (
-            <button
-              key={value}
-              onClick={() => setActiveCategory(value)}
-              className={cn(
-                "px-4 py-1.5 rounded-full text-sm font-sans font-medium transition-all",
-                activeCategory === value
-                  ? "bg-brand-dark text-white shadow-sm"
-                  : "bg-brand-surface text-brand-muted hover:text-brand-dark hover:bg-brand-light"
-              )}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-2 flex-wrap">
+            {CATEGORIES.map(({ label, value }) => (
+              <button
+                key={value}
+                onClick={() => setActiveCategory(value)}
+                className={cn(
+                  "px-4 py-1.5 rounded-full text-sm font-sans font-medium transition-all",
+                  activeCategory === value
+                    ? "bg-brand-dark text-white shadow-sm"
+                    : "bg-brand-surface text-brand-muted hover:text-brand-dark hover:bg-brand-light"
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="relative max-w-xs w-full">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-brand-muted" />
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-9 pr-10 py-2 bg-brand-surface border border-brand-light rounded-full text-sm font-sans focus:outline-none focus:border-brand-blue transition-colors"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-brand-light rounded-full transition-colors"
+              >
+                <X className="h-3 w-3 text-brand-muted" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

@@ -81,7 +81,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppFAB />
-        <Toaster position="bottom-right" richColors />
+        <Toaster position="bottom-left" richColors />
       </body>
     </html>
   );
