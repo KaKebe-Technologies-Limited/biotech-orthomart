@@ -7,7 +7,6 @@ import {
   Activity,
   Shield,
   PersonStanding,
-  Wrench,
   Package,
   Stethoscope,
   Building2,
@@ -107,7 +106,7 @@ export default function Home() {
           priority
           alt=""
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-brand-dark/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-brand-dark/80 via-brand-dark/60 to-transparent" />
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl">
@@ -120,7 +119,7 @@ export default function Home() {
             </h1>
             <p className="font-sans text-lg text-white/75 leading-relaxed mb-8 max-w-lg">
               Sourcing CE and FDA approved implants, orthotics, and surgical instruments
-              from world-class manufacturers — delivered to Uganda's healthcare institutions.
+              from world-class manufacturers — delivered to Uganda&apos;s healthcare institutions.
             </p>
             <div className="flex items-center gap-4 mb-10 text-white/60 text-xs font-sans tracking-wide uppercase">
               <span>CE/FDA Approved</span><span className="text-white/30">·</span>
@@ -196,18 +195,18 @@ export default function Home() {
                 About Us
               </p>
               <h2 className="font-serif text-4xl text-brand-dark leading-tight mb-6">
-                Uganda's trusted source for orthopaedic excellence
+                Uganda&apos;s trusted source for orthopaedic excellence
               </h2>
               <p className="font-sans text-brand-muted leading-relaxed mb-4">
                 Biotech Orthomart Ltd is a Kampala-based importer and distributor of orthopaedic implants,
                 orthotics, prosthetics, surgical instruments, and medical textiles. We serve hospitals,
                 clinics, pharmacies, NGOs, and government institutions across Uganda from our branches
-                in Kampala and Yumbe.
+                in Kampala and Arua.
               </p>
               <p className="font-sans text-brand-muted leading-relaxed mb-8">
                 Every device we supply carries CE or FDA certification, sourced directly from world-class
                 manufacturers including Circleg and Teknimed. Our mission is to make premium orthopaedic
-                care accessible to Uganda's healthcare ecosystem.
+                care accessible to Uganda&apos;s healthcare ecosystem.
               </p>
               <Link
                 href="/about"
@@ -219,7 +218,7 @@ export default function Home() {
 
             {/* Right — image with floating stat card */}
             <div className="relative">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/about_1.jpg"
                   fill
@@ -289,7 +288,7 @@ export default function Home() {
                 href={`/products?category=${slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-light"
               >
-                <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden">
+                <div className="relative aspect-4/3 bg-brand-surface overflow-hidden">
                   <Image
                     src={image}
                     fill
@@ -302,7 +301,7 @@ export default function Home() {
                   <h3 className="font-serif text-xl text-brand-dark group-hover:text-brand-blue transition-colors duration-200">
                     {label}
                   </h3>
-                  <ArrowRight className="w-4 h-4 text-brand-muted group-hover:text-brand-blue transition-colors duration-200 flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-brand-muted group-hover:text-brand-blue transition-colors duration-200 shrink-0" />
                 </div>
               </Link>
             ))}
@@ -370,8 +369,8 @@ export default function Home() {
             </div>
 
             {/* Right — staggered 2-image collage */}
-            <div className="relative h-[420px] hidden lg:block">
-              <div className="absolute left-0 top-0 w-[58%] aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-105 hidden lg:block">
+              <div className="absolute left-0 top-0 w-[58%] aspect-3/4 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src="/images/orthopedic-drill.jpg"
                   fill
@@ -380,7 +379,7 @@ export default function Home() {
                   alt="Orthopaedic surgical instruments"
                 />
               </div>
-              <div className="absolute right-0 bottom-0 w-[52%] aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border-4 border-brand-dark">
+              <div className="absolute right-0 bottom-0 w-[52%] aspect-3/4 rounded-2xl overflow-hidden shadow-xl border-4 border-brand-dark">
                 <Image
                   src="/images/orthotic-8.jpg"
                   fill
@@ -465,7 +464,7 @@ export default function Home() {
               },
             ].map(({ Icon, title, body }) => (
               <div key={title} className="bg-brand-surface rounded-2xl p-6 border border-brand-light flex flex-col gap-4">
-                <div className="h-12 w-12 bg-brand-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="h-12 w-12 bg-brand-blue/10 rounded-xl flex items-center justify-center shrink-0">
                   <Icon className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>
@@ -535,7 +534,7 @@ export default function Home() {
               },
               {
                 q: "Do you deliver outside Kampala?",
-                a: "Yes. We deliver across Uganda, including to our Yumbe branch in West Nile. For large institutional orders, we offer logistics coordination directly to your facility. Contact us to discuss delivery terms for your location.",
+                a: "Yes. We deliver across Uganda, including to our Arua branch in West Nile. For large institutional orders, we offer logistics coordination directly to your facility. Contact us to discuss delivery terms for your location.",
               },
               {
                 q: "Can I get clinical support with product selection?",
@@ -549,7 +548,7 @@ export default function Home() {
               <details key={q} className="group bg-white border border-brand-light rounded-xl overflow-hidden">
                 <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer font-sans font-semibold text-brand-dark hover:text-brand-blue transition-colors list-none">
                   {q}
-                  <ChevronDown className="w-5 h-5 text-brand-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                  <ChevronDown className="w-5 h-5 text-brand-muted shrink-0 transition-transform duration-200 group-open:rotate-180" />
                 </summary>
                 <div className="px-6 pb-6 font-sans text-sm text-brand-muted leading-relaxed border-t border-brand-light pt-4">
                   {a}

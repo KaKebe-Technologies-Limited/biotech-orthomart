@@ -91,7 +91,7 @@ const faqs = [
   {
     question: "Do you supply products nationwide, or only in Kampala?",
     answer:
-      "We have branches in Kampala (HQ) and Yumbe, and can arrange delivery to healthcare facilities across Uganda. Contact us to discuss delivery options for your location.",
+      "We have branches in Kampala (HQ) and Arua, and can arrange delivery to healthcare facilities across Uganda. Contact us to discuss delivery options for your location.",
   },
   {
     question: "How do I request a quote for my facility?",
@@ -128,7 +128,7 @@ export default function WhoWeServePage() {
             Healthcare partners across Uganda
           </h1>
           <p className="font-sans text-brand-muted max-w-2xl">
-            From national referral hospitals to individual patients — we supply certified orthopaedic and medical products to every segment of Uganda's healthcare ecosystem.
+            From national referral hospitals to individual patients — we supply certified orthopaedic and medical products to every segment of Uganda&apos;s healthcare ecosystem.
           </p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function WhoWeServePage() {
                 <div className="space-y-1.5">
                   {client.examples.map((ex) => (
                     <div key={ex} className="flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-brand-gold flex-shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-brand-gold shrink-0" />
                       <span className="font-sans text-xs text-brand-muted">{ex}</span>
                     </div>
                   ))}
@@ -203,7 +203,7 @@ export default function WhoWeServePage() {
               <details key={i} className="group py-5">
                 <summary className="flex items-center justify-between cursor-pointer list-none">
                   <span className="font-sans font-semibold text-brand-dark pr-8">{faq.question}</span>
-                  <ChevronDown className="w-5 h-5 text-brand-muted flex-shrink-0 group-open:rotate-180 transition-transform" />
+                  <ChevronDown className="w-5 h-5 text-brand-muted shrink-0 group-open:rotate-180 transition-transform" />
                 </summary>
                 <p className="font-sans text-brand-muted text-sm leading-relaxed mt-4 pr-8">
                   {faq.answer}
@@ -219,7 +219,7 @@ export default function WhoWeServePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-serif text-4xl text-white mb-4">Ready to work with us?</h2>
           <p className="font-sans text-white/70 mb-8 max-w-lg mx-auto">
-            Get in touch to discuss your facility's requirements or request a product quote.
+            Get in touch to discuss your facility&apos;s requirements or request a product quote.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <Link

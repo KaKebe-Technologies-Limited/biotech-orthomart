@@ -60,8 +60,8 @@ const services = [
     icon: Truck,
     title: "Delivery Services",
     description:
-      "Reliable, timely delivery of medical products to healthcare facilities across Uganda. Operating from our Kampala and Yumbe branches, we ensure critical supplies reach you when you need them.",
-    highlights: ["Kampala & Yumbe branches", "Nationwide delivery", "Urgent supply fulfilment"],
+      "Reliable, timely delivery of medical products to healthcare facilities across Uganda. Operating from our Kampala and Arua branches, we ensure critical supplies reach you when you need them.",
+    highlights: ["Kampala & Arua branches", "Nationwide delivery", "Urgent supply fulfilment"],
   },
 ];
 
@@ -76,7 +76,7 @@ export default function ServicesPage() {
           </p>
           <h1 className="font-serif text-5xl text-brand-dark mb-3">Our Services</h1>
           <p className="font-sans text-brand-muted max-w-2xl">
-            Comprehensive healthcare solutions — from surgical supply to patient rehabilitation — tailored for Uganda's medical community.
+            Comprehensive healthcare solutions — from surgical supply to patient rehabilitation — tailored for Uganda&apos;s medical community.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                 <div className="space-y-2">
                   {service.highlights.map((h) => (
                     <div key={h} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
                       <span className="font-sans text-xs text-brand-muted">{h}</span>
                     </div>
                   ))}

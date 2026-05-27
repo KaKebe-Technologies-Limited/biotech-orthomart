@@ -24,9 +24,9 @@ const articles = [
   },
   {
     category: "Company News",
-    title: "Biotech Orthomart Opens Second Branch in Yumbe",
+    title: "Biotech Orthomart Opens Second Branch in Arua",
     excerpt:
-      "To better serve healthcare facilities in the West Nile sub-region, Biotech Orthomart has established a branch in Yumbe, bringing certified orthopaedic products closer to the communities that need them most.",
+      "To better serve healthcare facilities in the West Nile sub-region, Biotech Orthomart has established a branch in Arua, bringing certified orthopaedic products closer to the communities that need them most.",
     date: "Coming Soon",
     image: null,
   },
@@ -88,7 +88,7 @@ export default function NewsPage() {
                 className="group bg-white border border-brand-light rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 {/* Image placeholder */}
-                <div className="aspect-[16/9] bg-brand-surface flex items-center justify-center border-b border-brand-light">
+                <div className="aspect-video bg-brand-surface flex items-center justify-center border-b border-brand-light">
                   <span className="font-sans text-xs text-brand-muted">Image coming soon</span>
                 </div>
 
@@ -124,7 +124,7 @@ export default function NewsPage() {
           <div className="mt-16 text-center py-12 border border-dashed border-brand-light rounded-2xl">
             <p className="font-serif text-2xl text-brand-dark mb-2">More articles coming soon</p>
             <p className="font-sans text-sm text-brand-muted max-w-sm mx-auto">
-              We'll be publishing product news, healthcare insights, and company updates regularly. Check back soon.
+              We&apos;ll be publishing product news, healthcare insights, and company updates regularly. Check back soon.
             </p>
           </div>
         </div>

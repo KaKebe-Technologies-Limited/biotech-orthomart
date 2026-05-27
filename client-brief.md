@@ -107,7 +107,7 @@ Branches
 
 Kampala
 
-Yumbe
+Arua
 
 ### **Featured Products**
 

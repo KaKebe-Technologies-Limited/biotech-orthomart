@@ -60,7 +60,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer border border-brand-light">
-      <div className="relative aspect-[4/3] bg-brand-surface overflow-hidden flex items-center justify-center">
+      <div className="relative aspect-4/3 bg-brand-surface overflow-hidden flex items-center justify-center">
         <Image
           src={product.image}
           fill

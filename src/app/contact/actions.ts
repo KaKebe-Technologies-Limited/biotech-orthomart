@@ -64,7 +64,7 @@ export async function sendContactEmail(
     return {
       ok: false,
       message:
-        "Something went wrong on our end. Please email us directly at info@biotechorthomart.com or reach us on WhatsApp.",
+        `Something went wrong on our end. Please email us directly at ${TO} or reach us on WhatsApp.`,
     };
   }
 

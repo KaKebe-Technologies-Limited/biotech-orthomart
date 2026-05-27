@@ -15,12 +15,12 @@ const branches = [
     isPrimary: true,
   },
   {
-    name: "Yumbe Branch",
-    address: "Yumbe Town, West Nile, Uganda",
+    name: "Arua Branch",
+    address: "Arua Town, Northern Uganda, Uganda",
     phone: "+256 XXX XXX XXX",
-    email: "yumbe@biotechorthomart.com",
+    email: "arua@biotechorthomart.com",
     hours: "Mon–Fri: 8:00am – 5:00pm",
-    mapQuery: "Yumbe+Uganda",
+    mapQuery: "Arua+Uganda",
     isPrimary: false,
   },
 ];
@@ -95,7 +95,7 @@ export default function ContactPage() {
           </p>
           <h1 className="font-serif text-5xl text-brand-dark mb-4">Contact Us</h1>
           <p className="font-sans text-brand-muted max-w-xl mx-auto">
-            Have a question or want to discuss your facility's requirements? Our team is ready to help.
+            Have a question or want to discuss your facility&apos;s requirements? Our team is ready to help.
           </p>
         </div>
       </section>
@@ -130,11 +130,11 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2.5 text-sm">
                         <div className="flex items-start gap-3">
-                          <MapPin className="w-4 h-4 text-brand-blue mt-0.5 flex-shrink-0" />
+                          <MapPin className="w-4 h-4 text-brand-blue mt-0.5 shrink-0" />
                           <span className="font-sans text-brand-muted">{branch.address}</span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <Phone className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                          <Phone className="w-4 h-4 text-brand-blue shrink-0" />
                           <a
                             href={`tel:${branch.phone.replace(/\s/g, "")}`}
                             className="font-sans text-brand-muted hover:text-brand-blue transition-colors"
@@ -143,7 +143,7 @@ export default function ContactPage() {
                           </a>
                         </div>
                         <div className="flex items-center gap-3">
-                          <Mail className="w-4 h-4 text-brand-blue flex-shrink-0" />
+                          <Mail className="w-4 h-4 text-brand-blue shrink-0" />
                           <a
                             href={`mailto:${branch.email}`}
                             className="font-sans text-brand-muted hover:text-brand-blue transition-colors"
@@ -152,7 +152,7 @@ export default function ContactPage() {
                           </a>
                         </div>
                         <div className="flex items-center gap-3">
-                          <Clock className="w-4 h-4 text-brand-muted flex-shrink-0" />
+                          <Clock className="w-4 h-4 text-brand-muted shrink-0" />
                           <span className="font-sans text-brand-muted">{branch.hours}</span>
                         </div>
                       </div>
@@ -209,7 +209,7 @@ export default function ContactPage() {
             <div className="bg-white p-8 md:p-12 rounded-3xl border border-brand-light shadow-xl h-fit">
               <h3 className="font-serif text-2xl text-brand-dark mb-2">Send a message</h3>
               <p className="font-sans text-sm text-brand-muted mb-8">
-                We'll get back to you within one business day.
+                We&apos;ll get back to you within one business day.
               </p>
               {state?.ok ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -221,7 +221,7 @@ export default function ContactPage() {
                 <form action={formAction} className="space-y-5">
                   {state?.ok === false && (
                     <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-xl">
-                      <AlertCircle className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <AlertCircle className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
                       <p className="font-sans text-sm text-red-700">{state.message}</p>
                     </div>
                   )}

@@ -62,7 +62,7 @@ const whyChooseUs = [
   {
     icon: Globe,
     title: "Uganda-Based Operations",
-    description: "With branches in Kampala and Yumbe, we are rooted in Uganda — understanding local healthcare needs and logistics realities.",
+    description: "With branches in Kampala and Arua, we are rooted in Uganda — understanding local healthcare needs and logistics realities.",
   },
   {
     icon: Clock,
@@ -87,7 +87,7 @@ export default function AboutPage() {
           </p>
           <h1 className="font-serif text-5xl text-white mb-4">About Biotech Orthomart</h1>
           <p className="font-sans text-xl text-white/75 max-w-2xl">
-            Uganda's trusted importer and distributor of certified orthopaedic implants, orthotics, prosthetics, surgical instruments, and medical textiles.
+            Uganda&apos;s trusted importer and distributor of certified orthopaedic implants, orthotics, prosthetics, surgical instruments, and medical textiles.
           </p>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 Trusted healthcare solutions for East Africa
               </h2>
               <p className="font-sans text-brand-muted leading-relaxed mb-5">
-                Biotech Orthomart Ltd is a Kampala-based company specialising in the importation and distribution of high-quality orthopaedic and medical products. We serve hospitals, clinics, pharmacies, NGOs, government institutions, and individual clients across Uganda from our branches in Kampala and Yumbe.
+                Biotech Orthomart Ltd is a Kampala-based company specialising in the importation and distribution of high-quality orthopaedic and medical products. We serve hospitals, clinics, pharmacies, NGOs, government institutions, and individual clients across Uganda from our branches in Kampala and Arua.
               </p>
               <p className="font-sans text-brand-muted leading-relaxed mb-5">
                 Our catalogue spans CE and FDA-approved implants, trauma devices, orthotics, prosthetics, surgical consumables, and mobility aids — all sourced from internationally certified manufacturers. We are the authorised distributor for Circleg and Teknimed products in Uganda.
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 Get in touch with our team
               </Link>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/3]">
+            <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-4/3">
               <Image
                 src="/images/about_1.jpg"
                 alt="Biotech Orthomart team and operations"
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 key={person.name}
                 className="bg-white rounded-2xl overflow-hidden border border-brand-light shadow-sm hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-[3/2] overflow-hidden">
+                <div className="relative aspect-3/2 overflow-hidden">
                   <Image
                     src={person.image}
                     alt={person.name}
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl text-brand-dark mb-0.5">{person.name}</h3>
-                  <p className="font-sans text-xs font-semibold tracking-[0.1em] uppercase text-brand-gold mb-3">
+                  <p className="font-sans text-xs font-semibold tracking-widest uppercase text-brand-gold mb-3">
                     {person.role}
                   </p>
                   <p className="font-sans text-sm text-brand-muted leading-relaxed">{person.bio}</p>
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 key={item.title}
                 className="flex gap-5 p-6 bg-brand-surface rounded-2xl border border-brand-light"
               >
-                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center shrink-0">
                   <item.icon className="w-6 h-6 text-brand-blue" />
                 </div>
                 <div>

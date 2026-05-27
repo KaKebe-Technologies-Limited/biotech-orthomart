@@ -2,7 +2,7 @@
 
 ## Context
 
-This is a Next.js 16 (App Router) refactor of a static jQuery/Bootstrap site for **Biotech Orthomart Ltd**, a Kampala-based importer and distributor of orthopaedic implants, orthotics, prosthetics, surgical instruments, and medical textiles. They serve hospitals, clinics, pharmacies, NGOs, government institutions, and individual clients across Uganda (branches in Kampala and Yumbe).
+This is a Next.js 16 (App Router) refactor of a static jQuery/Bootstrap site for **Biotech Orthomart Ltd**, a Kampala-based importer and distributor of orthopaedic implants, orthotics, prosthetics, surgical instruments, and medical textiles. They serve hospitals, clinics, pharmacies, NGOs, government institutions, and individual clients across Uganda (branches in Kampala and Arua).
 
 The initial refactor was produced by Gemini CLI (refer to the plan at `refactor-plan.md`). The architecture and routing are acceptable foundations. **Do not rebuild from scratch.** Fix and extend the existing codebase systematically using this brief as the sole source of truth for design and product decisions.
 
@@ -168,7 +168,7 @@ Add above the navbar in `app/layout.tsx`. Visible on all pages.
         </button>
         <div className="absolute right-0 top-full mt-1 bg-white text-brand-dark rounded shadow-lg py-2 w-36 hidden group-hover:block z-50">
           <a href="/contact" className="block px-4 py-1.5 text-xs hover:bg-brand-surface">Kampala (HQ)</a>
-          <a href="/contact" className="block px-4 py-1.5 text-xs hover:bg-brand-surface">Yumbe</a>
+          <a href="/contact" className="block px-4 py-1.5 text-xs hover:bg-brand-surface">Arua</a>
         </div>
       </div>
     </div>
@@ -511,7 +511,7 @@ Build sections A through G in order (Trust Strip → Company Intro → Categorie
 2. `/services` — 6 service cards
 3. `/about` — company profile, leadership, Why Choose Us grid
 4. `/news` — static placeholder grid (3 empty article cards)
-5. `/contact` — form, map embed (Kampala + Yumbe), social links
+5. `/contact` — form, map embed (Kampala + Arua), social links
 
 ### Session 5 — Polish & QA (~30 min)
 1. Mobile sweep at 375px — navbar collapses, hero readable, cards stack, utility bar simplified
