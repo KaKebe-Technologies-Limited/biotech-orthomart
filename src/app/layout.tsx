@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import UtilityBar from "@/components/UtilityBar";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif",
@@ -82,6 +83,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFAB />
         <Toaster position="bottom-left" richColors />
+        <Analytics />
       </body>
     </html>
   );
