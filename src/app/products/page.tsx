@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import products from "@/data/products.json";
 import ProductCard from "@/components/ProductCard";
 import { cn } from "@/lib/utils";
@@ -18,21 +19,14 @@ const CATEGORIES: { label: string; value: string }[] = [
 ];
 
 export default function ShopPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("category");
+  const initialQuery = searchParams.get("q");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const cat = params.get("category");
-    const q = params.get("q");
-
-    if (cat && CATEGORIES.some((c) => c.value === cat)) {
-      setActiveCategory(cat);
-    }
-    if (q) {
-      setSearchQuery(q);
-    }
-  }, []);
+  const [activeCategory, setActiveCategory] = useState(
+    initialCategory && CATEGORIES.some((c) => c.value === initialCategory) ? initialCategory : "All"
+  );
+  const [searchQuery, setSearchQuery] = useState(initialQuery ?? "");
 
   const filtered = useMemo(() => {
     let result = products;

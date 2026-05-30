@@ -26,7 +26,7 @@ const leadership = [
   {
     name: "Dr Edmond O Odull, MD",
     role: "CEO & Executive Director",
-    image: "/images/man-1.jpg",
+    image: "/images/dr-edmond.jpg",
     bio: "A specialist in biotechnology and orthopaedics, leading Biotech Orthomart's mission to advance musculoskeletal health through innovation.",
   },
   {
@@ -34,12 +34,14 @@ const leadership = [
     role: "Kampala Branch",
     image: "/images/man-2.jpg",
     bio: "Overseeing procurement, logistics, and supplier relationships to ensure reliable supply of CE/FDA-approved products to our healthcare partners.",
+    attribution: { name: "Junior REIS", url: "https://unsplash.com/@juniorreisfoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", photoUrl: "https://unsplash.com/photos/woman-in-red-long-sleeve-shirt-standing-near-white-wall-during-daytime-sx1x4lXBrqc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" },
   },
   {
     name: "Clinical Liaison",
     role: "Technical & Support Division",
-    image: "/images/women.jpg",
+    image: "/images/woman.jpg",
     bio: "Bridging the gap between product capability and clinical need — providing expert guidance to surgeons, physiotherapists, and healthcare facilities.",
+    attribution: { name: "Khalid Boutchich", url: "https://unsplash.com/@khalidboutchich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", photoUrl: "https://unsplash.com/photos/man-in-gray-suit-jacket-holding-red-necktie-MYmWkQsup-I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" },
   },
 ];
 
@@ -209,6 +211,18 @@ export default function AboutPage() {
                     className="object-cover object-top"
                   />
                 </div>
+                {"attribution" in person && person.attribution && (
+                  <p className="px-3 pt-1.5 text-[10px] text-brand-muted font-sans">
+                    Photo by{" "}
+                    <a href={person.attribution.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-dark">
+                      {person.attribution.name}
+                    </a>{" "}
+                    on{" "}
+                    <a href={person.attribution.photoUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-dark">
+                      Unsplash
+                    </a>
+                  </p>
+                )}
                 <div className="p-6">
                   <h3 className="font-serif text-xl text-brand-dark mb-0.5">{person.name}</h3>
                   <p className="font-sans text-xs font-semibold tracking-widest uppercase text-brand-gold mb-3">

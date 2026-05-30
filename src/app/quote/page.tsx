@@ -1,12 +1,11 @@
 "use client";
 
 import { useQuoteBasket } from "@/store/useQuoteBasket";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MessageCircle, ChevronRight, FileText, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 export default function QuotePage() {
-  const [mounted, setMounted] = useState(false);
   const { items } = useQuoteBasket();
   const [formData, setFormData] = useState({
     name: "",
@@ -16,12 +15,6 @@ export default function QuotePage() {
     message: "",
     method: "form",
   });
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   const whatsappUrl = () => {
     const productList = items

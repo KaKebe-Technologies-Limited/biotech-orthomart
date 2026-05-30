@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useQuoteBasket } from "@/store/useQuoteBasket";
 import { useEffect, useState } from "react";
 import QuoteDrawer from "@/components/QuoteDrawer";
-import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,14 +18,13 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [mounted, setMounted] = useState(false);
+  const [mounted] = useState(() => typeof window !== "undefined");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const totalItems = useQuoteBasket((state) => state.totalItems());
   const openDrawer = useQuoteBasket((state) => state.openDrawer);
 
   useEffect(() => {
-    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -50,9 +47,9 @@ export default function Navbar() {
             <Image
               src="/images/logo.png"
               alt="Biotech Orthomart"
-              width={140}
-              height={40}
-              className="h-10 w-auto"
+              width={80}
+              height={80}
+              className="h-14 w-14"
               loading="eager"
             />
           </Link>

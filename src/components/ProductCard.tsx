@@ -1,14 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Activity,
-  Shield,
-  PersonStanding,
-  Wrench,
-  Package,
-  Stethoscope,
-} from "lucide-react";
 import { toast } from "sonner";
 import { useQuoteBasket } from "@/store/useQuoteBasket";
 
@@ -21,24 +13,8 @@ interface Product {
   badge?: string;
 }
 
-const categoryIcons: Record<string, React.ElementType> = {
-  Implant: Activity,
-  Implants: Activity,
-  Orthotic: Shield,
-  Orthotics: Shield,
-  Brace: Shield,
-  Orthoses: Shield,
-  Crutches: PersonStanding,
-  Prosthetics: PersonStanding,
-  "Mobility Aids": PersonStanding,
-  "Surgical Instruments": Stethoscope,
-  Consumables: Package,
-  Trauma: Wrench,
-};
-
 export default function ProductCard({ product }: { product: Product }) {
   const { addItem, openDrawer } = useQuoteBasket();
-  const CategoryIcon = categoryIcons[product.category] ?? Package;
 
   function handleAddToQuote() {
     addItem({

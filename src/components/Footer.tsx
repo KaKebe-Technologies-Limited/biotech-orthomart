@@ -29,8 +29,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/">
-              <Image src="/images/logo.png" alt="Biotech Orthomart" width={140} height={40} className="h-10 w-auto brightness-0 invert" />
+            <Link href="/" className="h-auto w-auto brightness-0 invert flex justify-center" >
+              <Image src="/images/logo.png" alt="Biotech Orthomart" width={120} height={120} className="h-24 w-24 brightness-0 invert" />
             </Link>
             <p className="text-brand-muted text-sm leading-relaxed font-sans">
               Leading provider of CE/FDA approved orthopaedic solutions in East Africa. Committed to excellence in patient care and medical reliability.
@@ -97,7 +97,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brand-muted font-sans">
+        <div className="border-t border-white/10 pt-8 flex flex-col items-start md:items-center gap-4 text-xs text-brand-muted font-sans">
           <p>© {new Date().getFullYear()} Biotech Orthomart Ltd. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Developed with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> by <a href="https://kakebe.tech" className="text-white hover:underline ml-1">Kakebe Technologies</a>
