@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import products from "@/data/products.json";
 import ProductCard from "@/components/ProductCard";
@@ -19,6 +19,14 @@ const CATEGORIES: { label: string; value: string }[] = [
 ];
 
 export default function ShopPage() {
+  return (
+    <Suspense>
+      <ShopContent />
+    </Suspense>
+  );
+}
+
+function ShopContent() {
   const searchParams = useSearchParams();
   const initialCategory = searchParams.get("category");
   const initialQuery = searchParams.get("q");
