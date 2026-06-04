@@ -155,7 +155,7 @@ Add above the navbar in `app/layout.tsx`. Visible on all pages.
       <span className="text-white/50 hidden md:block">Mon–Fri: 8:00am – 5:00pm</span>
     </div>
     <div className="flex items-center gap-4">
-      {/* Social: Instagram, TikTok, YouTube, WhatsApp */}
+      {/* Social: Instagram, WhatsApp */}
       <div className="flex items-center gap-3">
         {socialLinks.map(s => (
           <a key={s.name} href={s.url} className="hover:text-brand-gold transition-colors">{s.icon}</a>

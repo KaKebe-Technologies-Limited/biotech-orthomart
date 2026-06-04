@@ -15,30 +15,9 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const TikTokIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.17 8.17 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
-  </svg>
-);
-
-const YouTubeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
 const socialLinks = [
-  { name: "Facebook", url: "#", icon: <FacebookIcon /> },
-  { name: "Instagram", url: "#", icon: <InstagramIcon /> },
-  { name: "TikTok", url: "#", icon: <TikTokIcon /> },
-  { name: "YouTube", url: "#", icon: <YouTubeIcon /> },
-  { name: "WhatsApp", url: "https://wa.me/256392392921", icon: <WhatsAppIcon /> },
+  { name: "Instagram", url: "https://instagram.com/biotech_orthomart_ug", icon: <InstagramIcon /> },
+  { name: "WhatsApp", url: "https://wa.me/256791987356", icon: <WhatsAppIcon /> },
 ];
 
 export default function UtilityBar() {
@@ -46,8 +25,8 @@ export default function UtilityBar() {
     <div className="bg-brand-dark text-white text-xs font-sans">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <a href="tel:+256392392921" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
-            <Phone className="w-3 h-3" /> Call: +256 392 392921
+          <a href="tel:+256791987356" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors">
+            <Phone className="w-3 h-3" /> Call: +256 791 987356
           </a>
           <a href="mailto:info@biotechorthomart.com" className="hidden sm:flex items-center gap-1.5 hover:text-brand-gold transition-colors">
             <Mail className="w-3 h-3" /> info@biotechorthomart.com

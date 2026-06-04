@@ -21,7 +21,7 @@ export default function QuotePage() {
       .map((i) => `${i.name} × ${i.quantity}`)
       .join("%0A");
     const msg = `Hello Biotech Orthomart, I'd like to request a quote for the following:%0A${productList}%0A%0AName: ${encodeURIComponent(formData.name)}%0AOrganisation: ${encodeURIComponent(formData.organisation)}%0APhone: ${encodeURIComponent(formData.phone)}`;
-    return `https://wa.me/256392392921?text=${msg}`;
+    return `https://wa.me/256791987356?text=${msg}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {

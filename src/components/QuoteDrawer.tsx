@@ -26,7 +26,7 @@ export default function QuoteDrawer() {
     const productList = items
       .map((i) => `${i.name} × ${i.quantity}`)
       .join("%0A");
-    return `https://wa.me/256392392921?text=Hello%20Biotech%20Orthomart%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20the%20following%3A%0A${productList}`;
+    return `https://wa.me/256791987356?text=Hello%20Biotech%20Orthomart%2C%20I%27d%20like%20to%20request%20a%20quote%20for%20the%20following%3A%0A${productList}`;
   };
 
   if (!isOpen) return null;
@@ -74,7 +74,7 @@ export default function QuoteDrawer() {
           ) : (
             items.map((item) => (
               <div key={item.id} className="flex gap-4 items-start">
-                <div className="w-16 h-16 bg-brand-surface rounded-lg flex-shrink-0 relative overflow-hidden">
+                <div className="w-16 h-16 bg-brand-surface rounded-lg shrink-0 relative overflow-hidden">
                   <Image
                     src={item.image}
                     fill
