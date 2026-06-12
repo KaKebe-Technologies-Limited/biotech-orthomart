@@ -310,5 +310,21 @@
     "image": "/images/products/clavicle-s-plates.jpg",
     "category": "Implant",
     "description": "S-shaped locking plates for clavicle fracture fixation."
+  },
+  {
+    "id": "silicon-liner",
+    "name": "Silicon Liner",
+    "price": 0,
+    "image": "/images/products/silicon-liner.jpeg",
+    "category": "Prosthetics",
+    "description": "Soft silicone liners providing a comfortable and secure interface between the residual limb and prosthetic socket."
+  },
+  {
+    "id": "stump-socks",
+    "name": "Stump Socks",
+    "price": 0,
+    "image": "/images/products/stump-socks.jpeg",
+    "category": "Prosthetics",
+    "description": "Prosthetic stump socks in various sizes and ply thicknesses for fit adjustment, comfort, and residual limb protection."
   }
 ]
