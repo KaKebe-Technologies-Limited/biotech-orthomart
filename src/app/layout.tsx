@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     title: "Biotech Orthomart | CE/FDA Approved Orthopaedic Solutions in Uganda",
     description:
       "Uganda's trusted distributor of CE and FDA approved orthopaedic implants, orthotics, prosthetics, and surgical instruments.",
-    images: [{ url: "/images/hero_1.jpg", width: 1200, height: 630, alt: "Biotech Orthomart" }],
+    images: [{ url: "/images/hero_1.webp", width: 1200, height: 630, alt: "Biotech Orthomart" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Biotech Orthomart | CE/FDA Approved Orthopaedic Solutions in Uganda",
     description:
       "Uganda's trusted distributor of CE and FDA approved orthopaedic implants, orthotics, prosthetics, and surgical instruments.",
-    images: ["/images/hero_1.jpg"],
+    images: ["/images/hero_1.webp"],
   },
   icons: {
     icon: [

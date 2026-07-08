@@ -45,11 +45,11 @@ export default function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/images/logo_primary.webp"
               alt="Biotech Orthomart"
-              width={80}
-              height={80}
-              className="h-14 w-14"
+              width={180}
+              height={60}
+              className="h-12 w-auto"
               loading="eager"
             />
           </Link>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "About Us | Biotech Orthomart",
     description:
       "Learn about Biotech Orthomart Ltd — Kampala-based importers and distributors of world-class CE and FDA approved orthopaedic solutions.",
-    images: [{ url: "/images/about_1.jpg", width: 1200, height: 630, alt: "Biotech Orthomart team" }],
+    images: [{ url: "/images/about_1.webp", width: 1200, height: 630, alt: "Biotech Orthomart team" }],
   },
 };
 import {
@@ -26,20 +26,20 @@ const leadership = [
   {
     name: "Dr Edmond O Odull, MD",
     role: "CEO & Executive Director",
-    image: "/images/dr-edmond.jpg",
+    image: "/images/dr-edmond.webp",
     bio: "A specialist in biotechnology and orthopaedics, leading Biotech Orthomart's mission to advance musculoskeletal health through innovation.",
   },
   {
     name: "Operations Manager",
     role: "Kampala Branch",
-    image: "/images/man-2.jpg",
+    image: "/images/man-2.webp",
     bio: "Overseeing procurement, logistics, and supplier relationships to ensure reliable supply of CE/FDA-approved products to our healthcare partners.",
     attribution: { name: "Junior REIS", url: "https://unsplash.com/@juniorreisfoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", photoUrl: "https://unsplash.com/photos/woman-in-red-long-sleeve-shirt-standing-near-white-wall-during-daytime-sx1x4lXBrqc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" },
   },
   {
     name: "Clinical Liaison",
     role: "Technical & Support Division",
-    image: "/images/woman.jpg",
+    image: "/images/woman.webp",
     bio: "Bridging the gap between product capability and clinical need — providing expert guidance to surgeons, physiotherapists, and healthcare facilities.",
     attribution: { name: "Khalid Boutchich", url: "https://unsplash.com/@khalidboutchich?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText", photoUrl: "https://unsplash.com/photos/man-in-gray-suit-jacket-holding-red-necktie-MYmWkQsup-I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" },
   },
@@ -123,7 +123,7 @@ export default function AboutPage() {
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl relative aspect-4/3">
               <Image
-                src="/images/about_1.jpg"
+                src="/images/about_1.webp"
                 alt="Biotech Orthomart team and operations"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -134,6 +134,32 @@ export default function AboutPage() {
                 <p className="font-serif text-3xl text-brand-blue">500+</p>
                 <p className="font-sans text-xs text-brand-muted mt-0.5">Healthcare facilities served</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-20 bg-brand-blue text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-brand-gold mb-3">
+              Our Purpose
+            </p>
+            <h2 className="font-serif text-4xl text-white">Vision &amp; Mission</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl text-white mb-4">Our Vision</h3>
+              <p className="font-sans text-white/80 leading-relaxed">
+                To become the leading provider of biotechnological, biomedical, and rehabilitation devices and services in Africa.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8">
+              <h3 className="font-serif text-2xl text-brand-dark mb-4">Our Mission</h3>
+              <p className="font-sans text-brand-muted leading-relaxed">
+                To advance surgical and rehabilitation care through innovative biomedical and biotechnological solutions that improve patient outcomes and enhance quality of life.
+              </p>
             </div>
           </div>
         </div>

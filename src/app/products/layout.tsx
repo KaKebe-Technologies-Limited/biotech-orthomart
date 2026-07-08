@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Products | Biotech Orthomart",
     description:
       "CE and FDA approved orthopaedic implants, orthotics, prosthetics, mobility aids, and surgical instruments. Request a quote today.",
-    images: [{ url: "/images/implant-1.jpg", width: 1200, height: 630, alt: "Orthopaedic products" }],
+    images: [{ url: "/images/implant.webp", width: 1200, height: 630, alt: "Orthopaedic products" }],
   },
 };
 

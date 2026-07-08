@@ -19,8 +19,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/" className="h-auto w-auto brightness-0 invert flex justify-center" >
-              <Image src="/images/logo.png" alt="Biotech Orthomart" width={120} height={120} className="h-24 w-24 brightness-0 invert" />
+            <Link href="/" className="flex items-start" >
+              <Image src="/images/logo_landscape.webp" alt="Biotech Orthomart" width={200} height={60} className="h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="text-brand-muted text-sm leading-relaxed font-sans">
               Leading provider of CE/FDA approved orthopaedic solutions in East Africa. Committed to excellence in patient care and medical reliability.

@@ -26,40 +26,46 @@ import {
 
 const categories = [
   {
+    label: "Prosthetics",
+    image: "/images/products/circleg-prosthetic-limbs.webp",
+    Icon: PersonStanding,
+    slug: "Prosthetics",
+    featured: true,
+  },
+  {
     label: "Implants",
-    image: "/images/implant.jpg",
+    image: "/images/implant.webp",
     Icon: Activity,
     slug: "Implant",
+    featured: false,
   },
   {
     label: "Orthotics",
-    image: "/images/orthotic.png",
+    image: "/images/orthotic-8.webp",
     Icon: Shield,
     slug: "Orthotic",
+    featured: false,
   },
   {
     label: "Braces",
-    image: "/images/back-brace.png",
+    image: "/images/back-brace.webp",
     Icon: PersonStanding,
     slug: "Brace",
-  },
-  {
-    label: "Crutches",
-    image: "/images/crutch-pair.png",
-    Icon: PersonStanding,
-    slug: "Crutches",
+    featured: false,
   },
   {
     label: "Surgical Instruments",
-    image: "/images/instr.png",
+    image: "/images/instr.webp",
     Icon: Stethoscope,
     slug: "Surgical Instruments",
+    featured: false,
   },
   {
     label: "Consumables",
-    image: "/images/consumables.jpg",
+    image: "/images/consumables.webp",
     Icon: Package,
     slug: "Consumables",
+    featured: false,
   },
 ];
 
@@ -99,7 +105,7 @@ export default function Home() {
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <Image
-          src="/images/hero_1.jpg"
+          src="/images/hero_1.webp"
           fill
           sizes="100vw"
           className="object-cover object-center"
@@ -145,7 +151,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-8 right-8 hidden lg:flex gap-3">
-          {["Implants & Trauma", "Mobility Aids", "Surgical Instruments"].map(item => (
+          {["Prosthetics", "Implants & Trauma", "Surgical Instruments"].map(item => (
             <div
               key={item}
               className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-3 text-center text-white text-xs font-sans w-36 hover:bg-white/20 transition cursor-pointer"
@@ -220,7 +226,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/about_1.jpg"
+                  src="/images/about_1.webp"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -253,7 +259,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-2xl text-brand-dark mb-4">Our Vision</h3>
               <p className="font-sans text-brand-muted leading-relaxed">
-                To become a global leader in regenerative orthopedics and orthopedic biotechnology.
+                To become the leading provider of biotechnological, biomedical, and rehabilitation devices and services in Africa.
               </p>
             </div>
             <div className="bg-brand-blue rounded-2xl p-8 shadow-sm">
@@ -262,7 +268,7 @@ export default function Home() {
               </div>
               <h3 className="font-serif text-2xl text-white mb-4">Our Mission</h3>
               <p className="font-sans text-white/80 leading-relaxed">
-                To advance orthopedic care through innovative biotech solutions that improve patient outcomes and enhance quality of life.
+                To advance surgical and rehabilitation care through innovative biomedical and biotechnological solutions that improve patient outcomes and enhance quality of life.
               </p>
             </div>
           </div>
@@ -282,7 +288,42 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map(({ label, image, slug }) => (
+            {/* Featured Prosthetics card — spans full width on mobile, 2 cols on lg */}
+            {categories.filter(c => c.featured).map(({ label, image, slug }) => (
+              <Link
+                key={label}
+                href={`/products?category=${slug}`}
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-brand-blue lg:col-span-3"
+              >
+                <div className="relative aspect-video bg-brand-surface overflow-hidden">
+                  <Image
+                    src={image}
+                    fill
+                    sizes="100vw"
+                    className="object-cover scale-100 group-hover:scale-105 transition-transform duration-300"
+                    alt={label}
+                  />
+                  <div className="absolute inset-0 bg-linear-to-r from-brand-dark/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-8">
+                    <span className="inline-block bg-brand-gold text-brand-dark font-sans font-semibold text-xs px-3 py-1 rounded-full mb-3 w-fit uppercase tracking-widest">
+                      Key Product
+                    </span>
+                    <h3 className="font-serif text-4xl text-white group-hover:text-brand-gold transition-colors duration-200">
+                      {label}
+                    </h3>
+                    <p className="font-sans text-white/75 text-sm mt-2 max-w-md">
+                      Innovative prosthetic limb solutions including Circleg prosthetics — designed for mobility, durability, and patient independence.
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-2 font-sans font-semibold text-white text-sm">
+                      Explore Prosthetics <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+
+            {/* Remaining categories */}
+            {categories.filter(c => !c.featured).map(({ label, image, slug }) => (
               <Link
                 key={label}
                 href={`/products?category=${slug}`}
@@ -338,7 +379,7 @@ export default function Home() {
               </p>
 
               {/* Partner logos */}
-              <div className="flex items-center gap-6 mb-10">
+              <div className="flex flex-wrap items-center gap-4 mb-10">
                 <a
                   href="https://circleg.com"
                   target="_blank"
@@ -356,8 +397,24 @@ export default function Home() {
                   className="border border-white/20 rounded-lg px-5 py-3 hover:border-white/50 transition-colors"
                   aria-label="Teknimed website"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.06 36.78" fill="white" className="h-7 w-auto" aria-label="Teknimed" role="img"><polygon points="55.12 10.23 38.55 10.23 38.55 12.85 45.37 12.85 45.37 30.19 48.3 30.19 48.3 12.85 55.12 12.85 55.12 10.23"/><path d="M59.79,14.99c-4.28,0-7.5,3.34-7.5,7.77s3.35,7.77,7.79,7.77c2.62,0,4.6-.86,6.41-2.78l.22-.23-1.85-1.58-.2.2c-1.32,1.32-2.76,1.93-4.52,1.93-2.59,0-4.53-1.66-4.94-4.16h11.84l.02-.27c.03-.34.03-.57.03-.77,0-4.71-2.93-7.88-7.3-7.88ZM59.73,17.39c2.83,0,4.14,2.12,4.45,4.21h-8.98c.42-2.5,2.25-4.21,4.53-4.21Z"/><rect x="69.04" y="9.4" width="2.84" height="20.8"/><polygon points="83.2 30.2 79.76 30.2 72.95 21.75 79.46 15.29 83.11 15.29 76.47 21.76 83.2 30.2"/><path d="M92.21,14.99c-2.01,0-3.64.73-4.84,2.17v-1.87h-2.84v14.9h2.84v-8.49c0-2.46,1.73-4.18,4.2-4.18s3.85,1.46,3.85,4.02v8.66h2.84v-9.18c0-3.66-2.38-6.03-6.05-6.03Z"/><rect x="100.86" y="9.81" width="3.16" height="2.95"/><rect x="101" y="15.29" width="2.84" height="14.9"/><path d="M124.57,14.99c-2.2,0-3.92.85-5.25,2.59-1.02-1.68-2.73-2.59-4.85-2.59-2.26,0-3.62,1.02-4.55,2.12v-1.82h-2.84v14.9h2.84v-8.46c0-2.44,1.63-4.21,3.88-4.21s3.56,1.48,3.56,3.96v8.71h2.81v-8.55c0-2.85,1.94-4.13,3.85-4.13,2.32,0,3.59,1.43,3.59,4.02v8.66h2.84v-9.15c0-3.73-2.25-6.06-5.88-6.06Z"/><path d="M139.82,14.99c-4.28,0-7.5,3.34-7.5,7.77s3.35,7.77,7.79,7.77c2.62,0,4.6-.86,6.41-2.78l.22-.23-1.85-1.58-.2.2c-1.32,1.32-2.76,1.93-4.52,1.93-2.59,0-4.53-1.66-4.94-4.16h11.84l.02-.27c.03-.34.03-.57.03-.77,0-4.71-2.93-7.88-7.3-7.88ZM139.76,17.39c2.83,0,4.14,2.12,4.45,4.21h-8.98c.42-2.5,2.25-4.21,4.53-4.21Z"/><path d="M161.23,9.4v8.07c-1.45-1.65-3.28-2.48-5.45-2.48-3.62,0-7.47,2.71-7.47,7.74v.06c0,5.01,3.85,7.71,7.47,7.71,2.18,0,3.97-.85,5.45-2.6v2.3h2.84V9.4h-2.84ZM156.18,27.99c-2.89,0-4.99-2.2-4.99-5.29s2.05-5.2,4.99-5.2c2.52,0,5.13,1.95,5.13,5.2v.06c0,3.23-2.66,5.23-5.13,5.23Z"/><path d="M29.46,0H5.7c2.44.93,4.9,1.74,7.35,2.57,4.45,1.49,8.89,3.03,13.36,4.46.96.42,2,.62,3.05.61,1.05,0,2.09-.2,3.05-.61,4.47-1.43,8.91-2.97,13.36-4.46,2.45-.82,4.91-1.64,7.35-2.57h-23.76Z"/><path d="M28.29,9.7c-.2-.11-.42-.21-.64-.29h0c-1.38-.43-2.71-.93-4.07-1.39-2.3-.77-4.61-1.53-7.21-2.38.99.94,1.35,2.31.94,3.58-.66,2.63-1.24,5.27-1.83,7.91-.91,4.04-1.81,8.08-2.7,12.12-.55,2.49-1.1,4.97-1.65,7.45l.16.07c1.58-1.89,3.16-3.78,4.74-5.68,3.34-4.01,6.67-8.01,10-12.02,1.22-1.48,2.5-2.93,3.59-4.5,1.06-1.69.46-3.88-1.32-4.88"/><path d="M15.19,9.57h0c.8-2.05-.29-4.32-2.45-5.09,0,0,0,0,0,0-3.01-1.09-6.05-2.07-9.08-3.09C2.47.99,1.28.6.08.21l-.08.16c.08.09.16.18.25.26,2.22,1.69,4.44,3.39,6.68,5.06,2.05,1.53,4.09,3.08,6.19,4.56.95.67,1.7.38,2.08-.68"/></svg>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/teknimed.webp" alt="Teknimed" className="h-7 w-auto brightness-0 invert" />
                 </a>
+                <div className="border border-white/20 rounded-lg px-5 py-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/medisell.webp" alt="Medisell" className="h-7 w-auto brightness-0 invert" />
+                </div>
+                <div className="border border-white/20 rounded-lg px-5 py-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/abacus.webp" alt="Abacus" className="h-7 w-auto brightness-0 invert" />
+                </div>
+                <div className="border border-white/20 rounded-lg px-5 py-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/senjo.webp" alt="Senjo" className="h-7 w-auto brightness-0 invert" />
+                </div>
+                <div className="border border-white/20 rounded-lg px-5 py-3">
+                  <span className="text-white font-sans font-semibold text-sm tracking-wide">Meditech</span>
+                </div>
               </div>
 
               <Link
@@ -381,7 +438,7 @@ export default function Home() {
               </div>
               <div className="absolute right-0 bottom-0 w-[52%] aspect-3/4 rounded-2xl overflow-hidden shadow-xl border-4 border-brand-dark">
                 <Image
-                  src="/images/orthotic-8.jpg"
+                  src="/images/orthotic-8.webp"
                   fill
                   sizes="28vw"
                   className="object-cover"

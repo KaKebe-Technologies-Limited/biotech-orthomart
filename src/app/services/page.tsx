@@ -30,23 +30,23 @@ const services = [
   },
   {
     icon: PersonStanding,
-    title: "Prosthetic Fitting & Gait Training",
+    title: "Prosthetic Fitting & Rehabilitation",
     description:
-      "Supporting patient rehabilitation with lower limb prosthetics and orthotic solutions. We work closely with clinicians and physiotherapists to ensure correct fitting and guide patients through gait training.",
-    highlights: ["Lower limb prostheses", "Bipolar prosthesis", "Gait training support"],
+      "Supporting patient rehabilitation with a full range of prosthetic and orthotic solutions. We work closely with clinicians and physiotherapists to ensure correct fitting, alignment, and guide patients through gait training and functional recovery.",
+    highlights: ["Lower limb prostheses", "Circleg prosthetic limbs", "Gait training & rehabilitation support", "Silicon liners & stump socks"],
   },
   {
     icon: Wrench,
-    title: "Technical Support",
+    title: "Orthotic & Bracing Services",
     description:
-      "Expert guidance on the safe and effective use of all devices we supply. Our technical team is available to healthcare professionals for product queries, application advice, and troubleshooting.",
-    highlights: ["Device application guidance", "Product selection advice", "On-site technical visits"],
+      "Supply and fitting guidance for a comprehensive range of orthotics, braces, and mobility aids. We help clinicians select the right device for each patient condition — from spinal braces to ankle-foot orthoses.",
+    highlights: ["Spinal & cervical bracing", "Knee, ankle & upper-limb orthotics", "Custom fitting consultation", "Fracture care orthotics"],
   },
   {
     icon: MessageSquare,
     title: "Professional Consultation",
     description:
-      "Direct consultation services for healthcare providers selecting orthopaedic and rehabilitative products. We help facilities match the right products to their patient population and clinical protocols.",
+      "Direct consultation services for healthcare providers selecting orthopaedic, biomedical, and rehabilitative products. We help facilities match the right products to their patient population and clinical protocols.",
     highlights: ["Product matching consultation", "Clinical protocol alignment", "Catalogue walkthroughs"],
   },
   {
@@ -76,7 +76,7 @@ export default function ServicesPage() {
           </p>
           <h1 className="font-serif text-5xl text-brand-dark mb-3">Our Services</h1>
           <p className="font-sans text-brand-muted max-w-2xl">
-            Comprehensive healthcare solutions — from surgical supply to patient rehabilitation — tailored for Uganda&apos;s medical community.
+            Comprehensive healthcare solutions — from surgical supply and prosthetic fitting to patient rehabilitation and after-sale support — tailored for Uganda&apos;s medical community.
           </p>
         </div>
       </section>
