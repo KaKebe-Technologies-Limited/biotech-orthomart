@@ -418,7 +418,7 @@ Heading: "Comprehensive Medical Product Categories"
 Six category cards using the same icon→image hover interaction as ProductCard. Link each to `/products?category=X`. Categories: Implants · Orthotics · Prosthetics · Mobility Aids · Surgical Instruments · Consumables.
 
 **D — Dark Editorial / Partners** (`bg-brand-dark py-24`)
-Left: eyebrow (gold) + `font-serif text-white` heading + white/70 body + partner logos (Circleg, Teknimed in white/inverted) + ghost CTA button. Right: staggered 2-image collage (`orthopedic-drill.jpg` + `orthotic-8.jpg`, second offset 2rem down-right).
+Left: eyebrow (gold) + `font-serif text-white` heading + white/70 body + partner logos (Circleg, Teknimed in white/inverted) + ghost CTA button. Right: staggered 2-image collage (`orthopedic-drill.webp` + `orthotic-8.webp`, second offset 2rem down-right).
 
 Heading: `"The standard behind every device."` — with `"every device."` in `text-brand-gold font-serif italic`.
 
@@ -466,9 +466,9 @@ After updating `tailwind.config.ts`, sweep all component files:
 
 | Use | File |
 |---|---|
-| Hero background | `hero_1.jpg` or `orthopedic-drill.jpg` |
+| Hero background | `hero_1.jpg` or `orthopedic-drill.webp` |
 | Company intro section | `about_1.jpg` |
-| Dark editorial section | `orthopedic-drill.jpg` + `orthotic-8.jpg` |
+| Dark editorial section | `orthopedic-drill.webp` + `orthotic-8.webp` |
 | Team / people | `man-1.jpg`, `man-2.jpg`, `women.jpg` |
 | Implant products | `implant-1.jpg` → `implant-17.jpg` |
 | Orthotic products | `orthotic-1.jpg` → `orthotic-8.jpg` |

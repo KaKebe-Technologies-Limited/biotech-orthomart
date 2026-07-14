@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo_primary.webp"
+              src="/images/logo_landscape.webp"
               alt="Biotech Orthomart"
               width={180}
               height={60}

@@ -108,7 +108,8 @@ export default function Home() {
           src="/images/hero_1.webp"
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-bottom"
+          loading="eager"
           priority
           alt=""
         />
@@ -429,7 +430,7 @@ export default function Home() {
             <div className="relative h-105 hidden lg:block">
               <div className="absolute left-0 top-0 w-[58%] aspect-3/4 rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/orthopedic-drill.jpg"
+                  src="/images/orthopedic-drill.webp"
                   fill
                   sizes="30vw"
                   className="object-cover"
