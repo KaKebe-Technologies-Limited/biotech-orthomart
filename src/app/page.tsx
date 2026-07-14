@@ -27,7 +27,7 @@ import {
 const categories = [
   {
     label: "Prosthetics",
-    image: "/images/products/circleg-prosthetic-limbs.webp",
+    image: "/images/circleg-one-transtibial-kit.webp",
     Icon: PersonStanding,
     slug: "Prosthetics",
     featured: true,
